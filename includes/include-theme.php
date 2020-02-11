@@ -4,7 +4,7 @@
 class Theme {
 
 
-	protected static $version = '0.0.2.2';
+	protected static $version = '0.0.2.5';
 
 
 	public function init() {
@@ -12,6 +12,8 @@ class Theme {
 		require_once __DIR__ . '/include-menus.php';
 		require_once __DIR__ . '/include-scripts.php';
 		require_once __DIR__ . '/include-components.php';
+		//require_once __DIR__ . '/include-customizer.php';
+		require_once __DIR__ . '/include-demo.php';
 
 	}
 
