@@ -66,7 +66,7 @@
 						<a href="<?php echo get_site_url(); ?>/demo-site-footer" class="wsu-s-nav-vertical__nav-link">Full Site Footer</a>
 					</li>
 					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-site-footer-consensed" class="wsu-s-nav-vertical__nav-link">Condensed Site Footer</a>
+						<a href="<?php echo get_site_url(); ?>/demo-site-footer-condensed" class="wsu-s-nav-vertical__nav-link">Condensed Site Footer</a>
 					</li>
 					<li class="wsu-s-nav-vertical__nav-item" role="none">
 						<a href="<?php echo get_site_url(); ?>/demo-site-footer-none" class="wsu-s-nav-vertical__nav-link">No Site Footer</a>
