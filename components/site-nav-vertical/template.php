@@ -55,7 +55,7 @@
 						</ul>
 					</li>
 					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="#" class="wsu-s-nav-vertical__nav-link">Buttons</a>
+						<a href="<?php echo get_site_url(); ?>/demo-buttons" class="wsu-s-nav-vertical__nav-link">Buttons</a>
 					</li>
 				</ul>
 			</li>
