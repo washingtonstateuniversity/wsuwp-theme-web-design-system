@@ -4,7 +4,7 @@
 class Theme {
 
 
-	protected static $version = '0.0.2.6';
+	protected static $version = '0.0.2.7';
 
 
 	public function init() {
