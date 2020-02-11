@@ -1,6 +1,6 @@
 <?php namespace WSUWP\Theme\Binder;
 
-class Component_Nav_Horizontal {
+class Component_Site_Nav_Horizontal {
 
 	protected $args = array();
 

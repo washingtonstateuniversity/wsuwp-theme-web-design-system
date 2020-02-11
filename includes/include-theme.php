@@ -9,9 +9,6 @@ class Theme {
 
 	public function init() {
 
-		require_once get_template_directory() . '/classes/class-menu.php';
-
-		//require_once __DIR__ . '/include-template.php';
 		require_once __DIR__ . '/include-menus.php';
 		require_once __DIR__ . '/include-scripts.php';
 		require_once __DIR__ . '/include-components.php';
