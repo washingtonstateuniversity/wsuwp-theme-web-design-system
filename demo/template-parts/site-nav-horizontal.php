@@ -26,15 +26,6 @@
 				<a href="#" class="wsu-s-nav-horizontal__nav-link" role="menuitem">Consectetur Adipiscing Elit</a>
 			</li>
 			<li class="wsu-s-nav-horizontal__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-horizontal__nav-link" role="menuitem">Lorem Ipsum</a>
-			</li>
-			<li class="wsu-s-nav-horizontal__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-horizontal__nav-link" role="menuitem">Dolor</a>
-			</li>
-			<li class="wsu-s-nav-horizontal__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-horizontal__nav-link" role="menuitem">Sit Amet</a>
-			</li>
-			<li class="wsu-s-nav-horizontal__nav-item" role="none">
 				<a href="#" class="wsu-s-nav-horizontal__nav-link" role="menuitem">Consectetur Adipiscing Elit</a>
 			</li>
 			<li class="wsu-s-nav-horizontal__nav-item--has-children" role="none">
