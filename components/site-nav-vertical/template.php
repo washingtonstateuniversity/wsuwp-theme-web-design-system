@@ -50,7 +50,7 @@
 						<a href="#" class="wsu-s-nav-vertical__nav-link">Banners</a>
 						<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
 							<li class="wsu-s-nav-vertical__nav-item" role="none">
-								<a href="#" class="wsu-s-nav-vertical__nav-link">Overlay Banner</a>
+								<a href="<?php echo get_site_url(); ?>/demo-banner-overlay" class="wsu-s-nav-vertical__nav-link">Overlay Banner</a>
 							</li>
 						</ul>
 					</li>
