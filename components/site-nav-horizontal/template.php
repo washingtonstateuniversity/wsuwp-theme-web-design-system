@@ -18,12 +18,6 @@
 						<a href="#" class="wsu-s-nav-horizontal__nav-link--active">Consectetur</a>
 					</li>
 					<li class="wsu-s-nav-horizontal__nav-item" role="none">
-						<a href="#" class="wsu-s-nav-horizontal__nav-link">Adipiscing Elit</a>
-					</li>
-					<li class="wsu-s-nav-horizontal__nav-item" role="none">
-						<a href="#" class="wsu-s-nav-horizontal__nav-link">Sed Mollis Ipsum</a>
-					</li>
-					<li class="wsu-s-nav-horizontal__nav-item" role="none">
 						<a href="#" class="wsu-s-nav-horizontal__nav-link wsu-s-nav-horizontal__nav-link--button">Sed Mollis Ipsum</a>
 					</li>
 				</ul>
