@@ -11,6 +11,8 @@
 		<?php get_template_part( 'template-parts/site-nav-horizontal', get_post_type() ); ?>
 		<div class="wsu-s-main-container">
 			<div class="wsu-c-container">
+			<?php get_template_part( 'template-parts/site-hero-banner-overlay', get_post_type() ); ?>
+			<?php get_template_part( 'demo/demo-content-columns', get_post_type() ); ?>
 			<?php if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post();
