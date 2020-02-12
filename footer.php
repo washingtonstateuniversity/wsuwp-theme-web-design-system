@@ -20,6 +20,9 @@ $demo_options = get_theme_mod( 'wsu_wsd_demo', array() );
 	.gfield {
 		margin-bottom: 1rem;
 	}
+	.gfield textarea {
+		width: 100%;
+	}
 </style>
 <?php else : ?>
 	<?php wp_footer(); ?>
