@@ -1,5 +1,5 @@
 <!-- COMPONENT:START -->
-<div class="wsu-s-nav-vertical__wrapper wsu-u-no-js <?php echo esc_attr( $wrapper_class ); ?>">
+<div class="wsu-s-nav-vertical__wrapper wsu-u-no-js <?php echo esc_attr( $wrapper_class ); ?> is-demo">
 	<nav class="wsu-s-nav-vertical__nav-container" aria-label="Vertical Site Navigation">
 		<a href="#" class="wsu-s-nav-vertical__nav-container-close-link">
 			<span class="wsu-icon wsu-i-x-close"></span>
@@ -7,7 +7,7 @@
 		</a>
 		<ul class="wsu-s-nav-vertical__nav-list-container" id="wsu-s-nav-vertical" role="menubar" aria-label="Vertical Site Navigation">
 			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="<?php echo get_site_url(); ?>/demo/" class="wsu-s-nav-vertical__nav-link" role="menuitem">Home</a>
+				<a href="<?php echo get_site_url(); ?>/demo-home" class="wsu-s-nav-vertical__nav-link" role="menuitem">Home</a>
 			</li>
 			<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
 				<a href="<?php echo get_site_url(); ?>#" class="wsu-s-nav-vertical__nav-link" role="menuitem" aria-haspopup="true" aria-expanded="true">Navigation Examples</a>

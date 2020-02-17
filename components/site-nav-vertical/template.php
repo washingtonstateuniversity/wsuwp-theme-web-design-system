@@ -6,82 +6,47 @@
 			<span class="wsu-s-nav-vertical__nav-container-close-label">Close</span>
 		</a>
 		<ul class="wsu-s-nav-vertical__nav-list-container" id="wsu-s-nav-vertical" role="menubar" aria-label="Vertical Site Navigation">
-			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="<?php echo get_site_url(); ?>/demo/" class="wsu-s-nav-vertical__nav-link" role="menuitem">Home</a>
-			</li>
-			<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
-				<a href="<?php echo get_site_url(); ?>#" class="wsu-s-nav-vertical__nav-link" role="menuitem" aria-haspopup="true" aria-expanded="true">Navigation Examples</a>
+			<?php foreach ( $menu_items as $first_level_item ) : ?>
+			<li class="wsu-s-nav-vertical__nav-item<?php if ( ! empty( $first_level_item['children'] ) ) : ?>--has-children<?php endif; ?>" role="none">
+				<a 
+					href="<?php echo esc_url( $first_level_item['url'] ); ?>" 
+					class="wsu-s-nav-vertical__nav-link<?php if ( $first_level_item['is_current_item'] ) : ?>--active<?php endif; ?>"
+					<?php if ( $first_level_item['is_current_item'] || $first_level_item['is_current_ancestor'] ) : ?>tabindex="-1" aria-expanded="true"<?php endif; ?>
+					role="menuitem">
+					<?php echo esc_html( $first_level_item['title'] ); ?>
+				</a>
+				<?php if ( ! empty( $first_level_item['children'] ) ) : ?>
 				<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-nav-start-open" class="wsu-s-nav-vertical__nav-link">Vertical Start Open</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-nav-start-closed" class="wsu-s-nav-vertical__nav-link">Vertical Start Closed</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-nav-vertical-only" class="wsu-s-nav-vertical__nav-link">Vertical Only</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-nav-horizontal-only" class="wsu-s-nav-vertical__nav-link">Horizontal Only</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-nav-none" class="wsu-s-nav-vertical__nav-link">No Navigation</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
-						<a href="#" class="wsu-s-nav-vertical__nav-link">Second Level Nav Item</a>
+					<?php foreach ( $first_level_item['children'] as $second_level_item ) : ?>
+					<li class="wsu-s-nav-vertical__nav-item<?php if ( ! empty( $second_level_item['children'] ) ) : ?>--has-children<?php endif; ?>" role="none">
+						<a 
+							href="<?php echo esc_url( $second_level_item['url'] ); ?>" 
+							class="wsu-s-nav-vertical__nav-link<?php if ( $second_level_item['is_current_item'] ) : ?>--active<?php endif; ?>"
+							<?php if ( $second_level_item['is_current_item'] || $second_level_item['is_current_ancestor'] ) : ?>tabindex="-1" aria-expanded="true"<?php endif; ?>
+							>
+							<?php echo esc_html( $second_level_item['title'] ); ?>
+						</a>
+						<?php if ( ! empty( $second_level_item['children'] ) ) : ?>
 						<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
+							<?php foreach ( $second_level_item['children'] as $third_level_item ) : ?>
 							<li class="wsu-s-nav-vertical__nav-item" role="none">
-								<a href="#" class="wsu-s-nav-vertical__nav-link">Third Level Nav Item 1</a>
+								<a 
+									href="<?php echo esc_url( $third_level_item['url'] ); ?>" 
+									class="wsu-s-nav-vertical__nav-link<?php if ( $third_level_item['is_current_item'] ) : ?>--active<?php endif; ?>"
+									<?php if ( $third_level_item['is_current_item'] || $third_level_item['is_current_ancestor'] ) : ?>tabindex="-1" aria-expanded="true"<?php endif; ?>
+									>
+									<?php echo esc_html( $third_level_item['title'] ); ?>
+								</a>
 							</li>
-							<li class="wsu-s-nav-vertical__nav-item" role="none">
-								<a href="#" class="wsu-s-nav-vertical__nav-link">Third Level Nav Item 2</a>
-							</li>
-							<li class="wsu-s-nav-vertical__nav-item" role="none">
-								<a href="#" class="wsu-s-nav-vertical__nav-link">Third Level Nav Item 3</a>
-							</li>
+							<?php endforeach; ?>
 						</ul>
+						<?php endif; ?>
 					</li>
+					<?php endforeach; ?>
 				</ul>
+				<?php endif; ?>
 			</li>
-			<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
-				<a href="#" class="wsu-s-nav-vertical__nav-link--active" role="menuitem" aria-haspopup="true" aria-expanded="true" tabindex="-1">Content Components</a>
-				<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
-					<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
-						<a href="#" class="wsu-s-nav-vertical__nav-link">Banners</a>
-						<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
-							<li class="wsu-s-nav-vertical__nav-item" role="none">
-								<a href="<?php echo get_site_url(); ?>/demo-banner-overlay" class="wsu-s-nav-vertical__nav-link">Overlay Banner</a>
-							</li>
-						</ul>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-buttons" class="wsu-s-nav-vertical__nav-link">Buttons</a>
-					</li>
-				</ul>
-			</li>
-			<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
-				<a href="#" class="wsu-s-nav-vertical__nav-link" role="menuitem">Footer Examples</a>
-				<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-site-footer" class="wsu-s-nav-vertical__nav-link">Full Site Footer</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-site-footer-consensed" class="wsu-s-nav-vertical__nav-link">Condensed Site Footer</a>
-					</li>
-					<li class="wsu-s-nav-vertical__nav-item" role="none">
-						<a href="<?php echo get_site_url(); ?>/demo-site-footer-none" class="wsu-s-nav-vertical__nav-link">No Site Footer</a>
-					</li>
-				</ul>
-			</li>
-			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-vertical__nav-link" role="menuitem">Link Title that is obviously ridiculously long...</a>
-			</li>
-			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-vertical__nav-link" role="menuitem">Another Menu Item</a>
-			</li>
-			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="#" class="wsu-s-nav-vertical__nav-link" role="menuitem">Another Menu Item</a>
-			</li>
+			<?php endforeach; ?>
 		</ul>
 	</nav>
 	<a class="wsu-s-nav-vertical__menu-icon-link" href="#" aria-haspopup="true" aria-expanded="true">

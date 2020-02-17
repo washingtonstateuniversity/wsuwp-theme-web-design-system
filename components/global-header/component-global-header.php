@@ -18,7 +18,13 @@ class Component_Global_Header {
 
 	public function render() {
 
-		include __DIR__ . '/template.php';
+		$is_active = Theme::get_component_option( 'global_header', 'is_active' );
+
+		if ( $is_active ) {
+
+			include __DIR__ . '/template.php';
+
+		}
 
 	}
 
