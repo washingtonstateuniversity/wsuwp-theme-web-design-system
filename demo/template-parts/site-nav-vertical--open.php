@@ -7,7 +7,7 @@
 		</a>
 		<ul class="wsu-s-nav-vertical__nav-list-container" id="wsu-s-nav-vertical" role="menubar" aria-label="Vertical Site Navigation">
 			<li class="wsu-s-nav-vertical__nav-item" role="none">
-				<a href="<?php echo get_site_url(); ?>/demo/" class="wsu-s-nav-vertical__nav-link" role="menuitem">Home</a>
+				<a href="<?php echo get_site_url(); ?>/demo-home" class="wsu-s-nav-vertical__nav-link" role="menuitem">Home</a>
 			</li>
 			<li class="wsu-s-nav-vertical__nav-item--has-children" role="none">
 				<a href="<?php echo get_site_url(); ?>#" class="wsu-s-nav-vertical__nav-link" role="menuitem" aria-haspopup="true" aria-expanded="true">Navigation Examples</a>
