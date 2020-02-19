@@ -17,15 +17,16 @@ class Theme {
 
 	public function init() {
 
-		add_action( 'init', __CLASS__ . '::setup_theme' );
+		$this->setup_theme();
 
 	}
 
 
-	public static function setup_theme() {
+	protected function setup_theme() {
 
 		self::$options = new Options();
-		self::$options->set_options();
+
+		add_action( 'init', array( self::$options, 'set_options' ) );
 
 		if ( is_customize_preview() ) {
 
