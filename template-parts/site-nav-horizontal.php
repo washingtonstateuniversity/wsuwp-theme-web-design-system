@@ -1,3 +1,3 @@
-<?php namespace WSUWP\Theme\Binder;
+<?php namespace WSUWP\Theme\WDS;
 
 Components::render( 'site-nav-horizontal' );

@@ -1,10 +1,10 @@
-<?php namespace WSUWP\Theme\Binder;
+<?php namespace WSUWP\Theme\WDS;
 
 
 class Theme {
 
 
-	protected static $version = '0.1.0.1';
+	protected static $version = '0.2.0';
 	protected static $options;
 
 
@@ -34,7 +34,9 @@ class Theme {
 
 		}
 
+		require_once __DIR__ . '/include-theme-config.php';
 		require_once __DIR__ . '/include-menus.php';
+		require_once __DIR__ . '/include-media.php';
 		require_once __DIR__ . '/include-scripts.php';
 		require_once __DIR__ . '/include-components.php';
 		require_once __DIR__ . '/include-customizer.php';

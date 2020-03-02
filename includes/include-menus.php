@@ -1,12 +1,12 @@
-<?php namespace WSUWP\Theme\Binder;
+<?php namespace WSUWP\Theme\WDS;
 
 
 class Menus {
 
 
-	public function __construct() {
+	public function init() {
 
-		add_action( 'after_setup_theme', 'WSUWP\Theme\Binder\Menus::register_menus', 0 );
+		add_action( 'after_setup_theme', __CLASS__ . '::register_menus', 0 );
 
 	}
 
@@ -24,4 +24,4 @@ class Menus {
 
 }
 
-$wsuwp_menus = new Menus();
+( new Menus() )->init();

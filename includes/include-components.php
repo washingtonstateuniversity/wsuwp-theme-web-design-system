@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Theme\Binder;
+<?php namespace WSUWP\Theme\WDS;
 
 
 class Components {

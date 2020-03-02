@@ -1,4 +1,4 @@
-<?php namespace WSUWP\Theme\Binder;
+<?php namespace WSUWP\Theme\WDS;
 
 
 class Scripts {
@@ -21,8 +21,6 @@ class Scripts {
 	public static function enqueue_scripts() {
 
 		wp_enqueue_style( 'wsu_design_system_normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', array(), Theme::get_version() );
-
-		wp_enqueue_style( 'wsu_design_system_containers', 'https://cdn.web.wsu.edu/designsystem/1.x/assets/css/wsu-design-system-containers.css', array(), Theme::get_version() );
 
 		wp_enqueue_style( 'wsu_design_system_icons', 'https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css', array(), Theme::get_version() );
 

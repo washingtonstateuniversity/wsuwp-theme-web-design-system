@@ -17,21 +17,21 @@
 			</a>
 			<ul class="wsu-g-header__nav-list">
 				<li class="wsu-g-header__nav-item">
-					<a class="wsu-g-header__nav-link" href="#">Give</a>
+					<a class="wsu-g-header__nav-link" href="https://foundation.wsu.edu/">Give</a>
 				</li>
 				<li class="wsu-g-header__nav-item">
-					<a class="wsu-g-header__nav-link" href="#">Apply Now</a>
+					<a class="wsu-g-header__nav-link" href="https://admission.wsu.edu/apply/as/find-your-application/">Apply Now</a>
 				</li>
 				<li class="wsu-g-header__nav-item">
-					<a class="wsu-g-header__nav-link" href="#">Locations</a>
+					<a class="wsu-g-header__nav-link" href="https://wsu.edu/about/statewide/">Locations</a>
 				</li>
 				<li class="wsu-g-header__nav-item">
-					<a class="wsu-g-header__nav-link" href="#">MyWSU</a>
+					<a class="wsu-g-header__nav-link" href="https://mywsu.wsu.edu">MyWSU</a>
 				</li>
 			</ul>
 		</nav>
 		<div class="wsu-g-header__search-icon-container">
-			<a class="wsu-g-header__search-icon-link" href="#" aria-haspopup="true" aria-expanded="true">
+			<a class="wsu-g-header__search-icon-link" href="https://search.wsu.edu" aria-haspopup="true" aria-expanded="true">
 				<span class="wsu-icon wsu-i-search"></span>
 			</a>
 		</div>
