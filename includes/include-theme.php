@@ -30,7 +30,7 @@ class Theme {
 
 		if ( is_customize_preview() ) {
 
-			add_action( 'wp_head', array( self::$options, 'set_options'), 1 );
+			add_action( 'wp_head', array( self::$options, 'set_options' ), 1 );
 
 		}
 
