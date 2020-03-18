@@ -23,7 +23,19 @@ class Options {
 				'is_active' => true,
 			),
 		),
-
+		'site_info' => array(
+			'contact' => array(
+				'unit_name' => '',
+				'address_1' => '',
+				'address_2' => '',
+				'city' => '',
+				'state' => '',
+				'zip' => '',
+				'phone' => '',
+				'email' => '',
+				'email' => '',
+			),
+		),
 	);
 
 

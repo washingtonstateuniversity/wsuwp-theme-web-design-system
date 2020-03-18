@@ -30,7 +30,14 @@
 		</nav>
 		<?php endif; ?>
 		<div class="wsu-s-footer__contact-container">
-			<p class="wsu-s-footer__contact-info"><span class="wsu-s-footer__name">Lorem ipsum dolor sit amet</span>, PO Box 123456, <a href="tel:#" class="wsu-s-footer__contact-phone">P 509-123-4567</a>, <a href="tel:#" class="wsu-s-footer__contact-fax">F 509-123-4567</a></p>
+			<p class="wsu-s-footer__contact-info">
+				<?php if ( ! empty( $contact['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $contact['unit_name'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $contact['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $contact['address_1'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $contact['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $contact['address_2'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $contact['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $contact['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $contact['email'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $contact['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $contact['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $contact['phone'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $contact['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $contact['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $contact['fax'] ); ?></a></span><?php endif; ?>
+			</p>
 			<ul class="wsu-s-footer__social-list">
 				<li class="wsu-s-footer__social-list-item">
 					<a href="#" class="wsu-s-footer__social-item-link">

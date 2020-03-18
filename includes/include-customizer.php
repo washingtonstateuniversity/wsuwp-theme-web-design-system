@@ -14,6 +14,7 @@ class Customizer {
 		self::require_class( 'section-site-header' );
 		self::require_class( 'section-site-nav-vertical' );
 		self::require_class( 'section-site-footer' );
+		self::require_class( 'section-contact' );
 
 	}
 
@@ -46,20 +47,31 @@ class Customizer {
 	public static function add_customizer_options( $wp_customize ) {
 
 		$wp_customize->add_panel(
-			self::$panel_id,
+			'components',
 			array(
 				'priority'       => 10,
 				'capability'     => 'edit_theme_options',
-				'title'          => 'Web Design System Options',
+				'title'          => 'Web Design System Components',
+				'description'    => 'Several settings pertaining my theme',
+			)
+		);
+
+		$wp_customize->add_panel(
+			'site_info',
+			array(
+				'priority'       => 10,
+				'capability'     => 'edit_theme_options',
+				'title'          => 'Site Information',
 				'description'    => 'Several settings pertaining my theme',
 			)
 		);
 
 		$customizer_section_classes = array(
-			'Section_Global_Header',
+			'Section_Contact',
+			//'Section_Global_Header',
 			//'Section_Global_Footer',
 			//'Section_Site_Header',
-			'Section_Site_Footer',
+			//'Section_Site_Footer',
 			//'Section_Site_Nav_Vertical',
 		);
 

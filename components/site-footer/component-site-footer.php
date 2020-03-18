@@ -26,11 +26,17 @@ class Component_Site_Footer {
 
 		$component_options = Options::get_options( 'components', 'site_footer' );
 
+		$contact = Options::get_options( 'site_info', 'contact' );
+
+		if ( ! is_array( $contact ) ) {
+
+			$contact = array();
+
+		}
+
 		$options = array_merge( $this->default_options, $component_options, $this->args );
 
 		$menu =  Menus::get_menu_array( 'footer_links' );
-
-		var_dump( $menu );
 
 		if ( ! empty( $options['is_active'] ) ) {
 

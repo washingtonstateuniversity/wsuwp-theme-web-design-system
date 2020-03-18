@@ -2,7 +2,6 @@
 
 class Customizer_Section_Site_Footer extends Customizer_Section  {
 
-	protected $section_id    = 'wsu_section_wsd_component_site_footer';
 	protected $section_title = 'Site Footer';
 	protected $key_base      = 'site_footer';
 
