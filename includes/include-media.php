@@ -6,21 +6,18 @@ class Media {
 
 	public function init() {
 
-		add_filter( 'big_image_size_threshold', __CLASS__ . '::set_max_image_size' );
+		add_action( 'init', __CLASS__ . '::set_img_sizes' );
 
 	}
 
 
-	// https://developer.wordpress.org/reference/hooks/big_image_size_threshold/
-	public static function set_max_image_size( $threshold ) {
+	public static function set_img_sizes() {
 
-		// Set default image threshold down from 2560 to 1900px
-		$threshold = 1900;
-
-		return $threshold;
+		// https://developer.wordpress.org/reference/hooks/big_image_size_threshold/
+		add_filter( 'big_image_size_threshold', function( $size ) { return 1900; } );
 
 	}
 
 }
 
-( new Menus() )->init();
+( new Media() )->init();
