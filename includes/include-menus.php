@@ -17,6 +17,7 @@ class Menus {
 			array(
 				'site_nav_horizontal' => 'Site Horizontal Navigation',
 				'site_nav_vertical'  => 'Site Vertical Navigation',
+				'site_footer'  => 'Site Footer',
 			)
 		);
 

@@ -5,72 +5,30 @@
 			<div class="wsu-s-footer__overview-title">Lorem ipsum dolor sit amet</div>
 			<p class="wsu-s-footer__overview-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint provident reprehenderit assumenda, repellendus nihil officia iure iusto recusandae harum vitae veniam doloribus.</p>
 		</div>
+		<?php if ( ! empty( $menu_items ) ) : ?>
 		<nav class="wsu-s-footer__nav">
 			<ul class="wsu-s-footer_nav-list">
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Lorem Ipsum</a>
+				<?php foreach ( $menu_items as $parent_item ): ?>
+				<li class="wsu-s-footer__nav-item<?php if ( ! empty( $parent_item['children'] ) ) : ?>--has-children<?php endif; ?>">
+					<a href="<?php echo esc_url( $parent_item['url'] ); ?>" class="wsu-s-footer__nav-link">
+						<?php echo esc_html( $parent_item['title'] ); ?>
+					</a>
+					<?php if ( ! empty( $parent_item['children'] ) ) : ?>
 					<ul class="wsu-s-footer__sub-menu">
+						<?php foreach ( $parent_item['children'] as $child_item ): ?>
 						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
+							<a href="<?php echo esc_url( $child_item['url'] ); ?>" class="wsu-s-footer__nav-link">
+								<?php echo esc_html( $child_item['title'] ); ?>
+							</a>
 						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Lorem ipsum dolor sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed ipsum dolor</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
+						<?php endforeach; ?>
 					</ul>
+					<?php endif; ?>
 				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Ligula Elementum</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-					</ul>
-				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Sed Sodales Non</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-					</ul>
-				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Auctor Interdum</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-					</ul>
-				</li>
+				<?php endforeach; ?>
 			</ul>
 		</nav>
+		<?php endif; ?>
 		<div class="wsu-s-footer__contact-container">
 			<p class="wsu-s-footer__contact-info"><span class="wsu-s-footer__name">Lorem ipsum dolor sit amet</span>, PO Box 123456, <a href="tel:#" class="wsu-s-footer__contact-phone">P 509-123-4567</a>, <a href="tel:#" class="wsu-s-footer__contact-fax">F 509-123-4567</a></p>
 			<ul class="wsu-s-footer__social-list">
