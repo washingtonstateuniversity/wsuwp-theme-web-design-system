@@ -22,7 +22,7 @@ class Component_Site_Nav_Vertical {
 
 	public function render() {
 
-		$is_active = Theme::get_component_option( 'site_nav_vertical', 'is_active' );
+		$is_active = Options::get_component_option( 'site_nav_vertical', 'is_active' );
 
 		if ( $is_active ) {
 

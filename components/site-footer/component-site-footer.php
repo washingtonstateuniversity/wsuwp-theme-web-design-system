@@ -3,6 +3,10 @@
 class Component_Site_Footer {
 
 	protected $args = array();
+	protected $default_options = array(
+		'is_active'  => true,
+		'show_links' => true,
+	);
 
 
 	public function __construct( $args = array() ) {
@@ -20,13 +24,15 @@ class Component_Site_Footer {
 
 	public function render() {
 
-		$is_active = Theme::get_component_option( 'site_footer', 'is_active' );
+		$component_options = Options::get_options( 'components', 'site_footer' );
 
-		if ( $is_active ) {
+		$options = array_merge( $this->default_options, $component_options, $this->args );
 
-			$menu = new Menu( 'site_footer' );
+		$menu =  Menus::get_menu_array( 'footer_links' );
 
-			$menu_items = $menu->get( 'menu_array' );
+		var_dump( $menu );
+
+		if ( ! empty( $options['is_active'] ) ) {
 
 			include __DIR__ . '/template.php';
 

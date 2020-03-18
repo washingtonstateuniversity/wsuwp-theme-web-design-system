@@ -5,35 +5,28 @@ class Theme {
 
 
 	protected static $version = '0.2.0';
-	protected static $options;
+
+
+	public static function get( $property ) {
+
+		switch ( $property ) {
+			case 'version':
+				return self::$version;
+			default:
+				return '';
+		}
+
+	}
 
 
 	public function __construct() {
-
-		self::require_class( 'options' );
 
 	}
 
 
 	public function init() {
 
-		$this->setup_theme();
-
-	}
-
-
-	protected function setup_theme() {
-
-		self::$options = new Options();
-
-		add_action( 'init', array( self::$options, 'set_options' ) );
-
-		if ( is_customize_preview() ) {
-
-			add_action( 'wp_head', array( self::$options, 'set_options' ), 1 );
-
-		}
-
+		require_once __DIR__ . '/include-options.php';
 		require_once __DIR__ . '/include-theme-config.php';
 		require_once __DIR__ . '/include-menus.php';
 		require_once __DIR__ . '/include-media.php';
@@ -43,6 +36,7 @@ class Theme {
 		require_once __DIR__ . '/include-demo.php';
 
 	}
+
 
 
 	public static function get_version() {
@@ -55,17 +49,6 @@ class Theme {
 	public static function require_class( $class_slug ) {
 
 		require_once get_template_directory() . '/classes/class-' . $class_slug . '.php';
-
-	}
-
-
-	public static function get_component_option( $component, $property, $default = '' ) {
-
-		return self::$options->get_option( 'components', $component, $property, $default );
-
-	}
-
-	public static function get_site_option( $group, $object, $property ) {
 
 	}
 

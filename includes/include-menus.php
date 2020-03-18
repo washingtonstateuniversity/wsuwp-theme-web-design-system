@@ -4,6 +4,13 @@
 class Menus {
 
 
+	public function __construct() {
+
+		Theme::require_class( 'menu' );
+
+	}
+
+
 	public function init() {
 
 		add_action( 'after_setup_theme', __CLASS__ . '::register_menus', 0 );
@@ -20,6 +27,14 @@ class Menus {
 				'site_footer'  => 'Site Footer',
 			)
 		);
+
+	}
+
+	public static function get_menu_array( $location ) {
+
+		$menu = new Menu( $location );
+
+		return $menu->get( 'menu_array' );
 
 	}
 

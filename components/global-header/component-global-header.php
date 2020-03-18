@@ -18,7 +18,7 @@ class Component_Global_Header {
 
 	public function render() {
 
-		$is_active = Theme::get_component_option( 'global_header', 'is_active' );
+		$is_active = Options::get_component_option( 'global_header', 'is_active' );
 
 		if ( $is_active ) {
 
