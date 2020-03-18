@@ -8,10 +8,12 @@ class Customizer {
 
 	public function __construct() {
 
-		Theme::require_class( 'customizer-section-global-header' );
-		Theme::require_class( 'customizer-section-global-footer' );
-		Theme::require_class( 'customizer-section-site-header' );
-		Theme::require_class( 'customizer-section-site-nav-vertical' );
+		self::require_class( 'section' );
+		self::require_class( 'section-global-header' );
+		self::require_class( 'section-global-footer' );
+		self::require_class( 'section-site-header' );
+		self::require_class( 'section-site-nav-vertical' );
+		self::require_class( 'section-site-footer' );
 
 	}
 
@@ -19,6 +21,24 @@ class Customizer {
 	public static function init() {
 
 		add_action( 'customize_register', __CLASS__ . '::add_customizer_options' );
+
+	}
+
+
+	public static function get( $property ) {
+
+		switch ( $property ) {
+			case 'panel_id':
+				return self::$panel_id;
+			default:
+				return '';
+		}
+	} 
+
+
+	public static function require_class( $class_slug ) {
+
+		require_once get_template_directory() . '/customizer/customizer-' . $class_slug . '.php';
 
 	}
 
@@ -35,17 +55,28 @@ class Customizer {
 			)
 		);
 
-		$globl_header_section = new Customizer_Section_Global_Header( $wp_customize, self::$panel_id );
-		$globl_header_section->add_section();
+		$customizer_section_classes = array(
+			'Section_Global_Header',
+			//'Section_Global_Footer',
+			//'Section_Site_Header',
+			'Section_Site_Footer',
+			//'Section_Site_Nav_Vertical',
+		);
 
-		$globl_footer_section = new Customizer_Section_Global_Footer( $wp_customize, self::$panel_id );
-		$globl_footer_section->add_section();
+		$theme_key    = Options::get( 'theme_key' );
+		$settings_key = Options::get( 'settings_key' );
 
-		$site_header_section = new Customizer_Section_Site_Header( $wp_customize, self::$panel_id );
-		$site_header_section->add_section();
+		foreach ( $customizer_section_classes as $section_class_slug ) {
 
-		$site_nav_vertical_section = new Customizer_Section_Site_Nav_Vertical( $wp_customize, self::$panel_id );
-		$site_nav_vertical_section->add_section();
+			$section_class = __NAMESPACE__ . '\Customizer_' . $section_class_slug;
+
+			if ( class_exists( $section_class ) ) {
+
+				$section = new $section_class( $wp_customize, self::get( 'panel_id' ), $theme_key, $settings_key );
+				$section->add_section();
+
+			} // End if
+		}
 
 	}
 
