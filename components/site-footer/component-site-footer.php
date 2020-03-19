@@ -4,8 +4,19 @@ class Component_Site_Footer {
 
 	protected $args = array();
 	protected $default_options = array(
-		'is_active'  => true,
-		'show_links' => true,
+		'is_active'      => true,
+		'menu'           => array(),
+		'footer_title'   => '',
+		'footer_caption' => '',
+		'unit_name'      => '',
+		'address_1'      => '',
+		'address_2'      => '',
+		'city'           => '',
+		'state'          => '',
+		'zip'            => '',
+		'phone'          => '',
+		'email'          => '',
+		'fax'            => '',
 	);
 
 
@@ -26,19 +37,15 @@ class Component_Site_Footer {
 
 		$component_options = Options::get_options( 'components', 'site_footer' );
 
-		$contact = Options::get_options( 'site_info', 'contact' );
+		var_dump( $component_options );
 
-		if ( ! is_array( $contact ) ) {
+		$contact_options = Options::get_options( 'site_info', 'contact' );
 
-			$contact = array();
+		$args = array_merge( $this->default_options, $component_options, $contact_options, $this->args );
 
-		}
+		$args['menu'] = Menus::get_menu_array( 'footer_links' );
 
-		$options = array_merge( $this->default_options, $component_options, $this->args );
-
-		$menu =  Menus::get_menu_array( 'footer_links' );
-
-		if ( ! empty( $options['is_active'] ) ) {
+		if ( ! empty( $args['is_active'] ) ) {
 
 			include __DIR__ . '/template.php';
 

@@ -1,14 +1,16 @@
 <!-- COMPONENT:START -->
 <div class="wsu-s-footer__wrapper">
 	<footer class="wsu-s-footer__container">
+		<?php if ( ! empty( $args['footer_title'] ) || ! empty( $args['footer_caption'] ) ) : ?>
 		<div class="wsu-s-footer__overview-container">
-			<div class="wsu-s-footer__overview-title">Lorem ipsum dolor sit amet</div>
-			<p class="wsu-s-footer__overview-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint provident reprehenderit assumenda, repellendus nihil officia iure iusto recusandae harum vitae veniam doloribus.</p>
+			<?php if ( ! empty( $args['footer_title'] ) ) : ?><div class="wsu-s-footer__overview-title"><?php echo esc_html( $args['footer_title'] ); ?></div><?php endif; ?>
+			<?php if ( ! empty( $args['footer_caption'] ) ) : ?><p class="wsu-s-footer__overview-desc"><?php echo wp_kses_post( $args['footer_caption'] ); ?></p><?php endif; ?>
 		</div>
-		<?php if ( ! empty( $menu_items ) ) : ?>
+		<?php endif; ?>
+		<?php if ( ! empty( $args['menu'] ) ) : ?>
 		<nav class="wsu-s-footer__nav">
 			<ul class="wsu-s-footer_nav-list">
-				<?php foreach ( $menu_items as $parent_item ): ?>
+				<?php foreach ( $args['menu'] as $parent_item ): ?>
 				<li class="wsu-s-footer__nav-item<?php if ( ! empty( $parent_item['children'] ) ) : ?>--has-children<?php endif; ?>">
 					<a href="<?php echo esc_url( $parent_item['url'] ); ?>" class="wsu-s-footer__nav-link">
 						<?php echo esc_html( $parent_item['title'] ); ?>
@@ -31,12 +33,12 @@
 		<?php endif; ?>
 		<div class="wsu-s-footer__contact-container">
 			<p class="wsu-s-footer__contact-info">
-				<?php if ( ! empty( $contact['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $contact['unit_name'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $contact['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $contact['address_1'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $contact['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $contact['address_2'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $contact['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $contact['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $contact['email'] ); ?></a></span><?php endif; ?>
-				<?php if ( ! empty( $contact['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $contact['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $contact['phone'] ); ?></a></span><?php endif; ?>
-				<?php if ( ! empty( $contact['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $contact['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $contact['fax'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $args['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $args['unit_name'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $args['address_1'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $args['address_2'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $args['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $args['email'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $args['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $args['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $args['phone'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $args['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $args['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $args['fax'] ); ?></a></span><?php endif; ?>
 			</p>
 			<ul class="wsu-s-footer__social-list">
 				<li class="wsu-s-footer__social-list-item">
