@@ -17,13 +17,38 @@ class Options {
 				'is_active' => true,
 			),
 			'site_footer' => array(
-				'is_active'  => true,
+				'is_active'      => true,
+				'footer_title'   => '',
+				'footer_caption' => '',
+				'show_social'    => true,
 			),
 			'site_nav_vertical' => array(
 				'is_active' => true,
 			),
 		),
-
+		'site_info' => array(
+			'contact' => array(
+				'unit_name' => '',
+				'address_1' => '',
+				'address_2' => '',
+				'city'      => '',
+				'state'     => '',
+				'zip'       => '',
+				'phone'     => '',
+				'email'     => '',
+				'email'     => '',
+			),
+			'social' => array(
+				'channel_one'        => '',
+				'channel_one_link'   => '',
+				'channel_two'        => '',
+				'channel_two_link'   => '',
+				'channel_three'      => '',
+				'channel_three_link' => '',
+				'channel_four'       => '',
+				'channel_four_link'  => '',
+			),
+		),
 	);
 
 
