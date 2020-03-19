@@ -42,6 +42,14 @@ class Customizer_Section_Site_Footer extends Customizer_Section  {
 			)
 		);
 
+		$this->wp_customize->add_setting(
+			$this->get_setting_key( 'show_social' ),
+			array(
+				'default'     => true,
+				'transport'   => 'refresh',
+			)
+		);
+
 		$this->wp_customize->add_control(
 			$this->get_control_key( 'is_active' ),
 			array(
@@ -55,7 +63,7 @@ class Customizer_Section_Site_Footer extends Customizer_Section  {
 		$this->wp_customize->add_control(
 			$this->get_control_key( 'footer_title' ),
 			array(
-				'settings' => $this->get_setting_key('footer_title' ),
+				'settings' => $this->get_setting_key( 'footer_title' ),
 				'label'    => 'Footer Title',
 				'section'  => $this->get( 'section_id' ),
 				'type'     => 'text',
@@ -65,10 +73,20 @@ class Customizer_Section_Site_Footer extends Customizer_Section  {
 		$this->wp_customize->add_control(
 			$this->get_control_key( 'footer_caption' ),
 			array(
-				'settings' => $this->get_setting_key('footer_caption' ),
+				'settings' => $this->get_setting_key( 'footer_caption' ),
 				'label'    => 'Footer Caption',
 				'section'  => $this->get( 'section_id' ),
 				'type'     => 'textarea',
+			)
+		);
+
+		$this->wp_customize->add_control(
+			$this->get_control_key( 'show_social' ),
+			array(
+				'settings' => $this->get_setting_key( 'show_social' ),
+				'label'    => 'Show Social Icons',
+				'section'  => $this->get( 'section_id' ),
+				'type'     => 'checkbox',
 			)
 		);
 

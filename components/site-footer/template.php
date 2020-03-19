@@ -41,21 +41,16 @@
 				<?php if ( ! empty( $args['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $args['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $args['fax'] ); ?></a></span><?php endif; ?>
 			</p>
 			<ul class="wsu-s-footer__social-list">
+
+				<?php foreach ( array( 'one', 'two', 'three', 'four' ) as $location ) : ?>
+				<?php if ( ! empty( $args['channel_' . $location ] ) && ! empty( $args['channel_' . $location . '_link' ] ) ) : ?>
 				<li class="wsu-s-footer__social-list-item">
 					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-instagram"></span>
+						<span class="wsu-icon wsu-i-social-<?php echo esc_attr( $args[ 'channel_' . $location ] ); ?>"></span>
 					</a>
 				</li>
-				<li class="wsu-s-footer__social-list-item">
-					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-twitter"></span>
-					</a>
-				</li>
-				<li class="wsu-s-footer__social-list-item">
-					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-facebook"></span>
-					</a>
-				</li>
+				<?php endif; ?>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 
