@@ -1,94 +1,56 @@
 <!-- COMPONENT:START -->
 <div class="wsu-s-footer__wrapper">
 	<footer class="wsu-s-footer__container">
+		<?php if ( ! empty( $args['footer_title'] ) || ! empty( $args['footer_caption'] ) ) : ?>
 		<div class="wsu-s-footer__overview-container">
-			<div class="wsu-s-footer__overview-title">Lorem ipsum dolor sit amet</div>
-			<p class="wsu-s-footer__overview-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint provident reprehenderit assumenda, repellendus nihil officia iure iusto recusandae harum vitae veniam doloribus.</p>
+			<?php if ( ! empty( $args['footer_title'] ) ) : ?><div class="wsu-s-footer__overview-title"><?php echo esc_html( $args['footer_title'] ); ?></div><?php endif; ?>
+			<?php if ( ! empty( $args['footer_caption'] ) ) : ?><p class="wsu-s-footer__overview-desc"><?php echo wp_kses_post( $args['footer_caption'] ); ?></p><?php endif; ?>
 		</div>
+		<?php endif; ?>
+		<?php if ( ! empty( $args['menu'] ) ) : ?>
 		<nav class="wsu-s-footer__nav">
 			<ul class="wsu-s-footer_nav-list">
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Lorem Ipsum</a>
+				<?php foreach ( $args['menu'] as $parent_item ): ?>
+				<li class="wsu-s-footer__nav-item<?php if ( ! empty( $parent_item['children'] ) ) : ?>--has-children<?php endif; ?>">
+					<a href="<?php echo esc_url( $parent_item['url'] ); ?>" class="wsu-s-footer__nav-link">
+						<?php echo esc_html( $parent_item['title'] ); ?>
+					</a>
+					<?php if ( ! empty( $parent_item['children'] ) ) : ?>
 					<ul class="wsu-s-footer__sub-menu">
+						<?php foreach ( $parent_item['children'] as $child_item ): ?>
 						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
+							<a href="<?php echo esc_url( $child_item['url'] ); ?>" class="wsu-s-footer__nav-link">
+								<?php echo esc_html( $child_item['title'] ); ?>
+							</a>
 						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Lorem ipsum dolor sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed ipsum dolor</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
+						<?php endforeach; ?>
 					</ul>
+					<?php endif; ?>
 				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Ligula Elementum</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-					</ul>
-				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Sed Sodales Non</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-					</ul>
-				</li>
-				<li class="wsu-s-footer__nav-item--has-children">
-					<a href="#" class="wsu-s-footer__nav-link">Auctor Interdum</a>
-					<ul class="wsu-s-footer__sub-menu">
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Dolar sit amet</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Consectectur adipiscing</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-						<li class="wsu-s-footer__nav-item">
-							<a href="#" class="wsu-s-footer__nav-link">Elit fusce sed</a>
-						</li>
-					</ul>
-				</li>
+				<?php endforeach; ?>
 			</ul>
 		</nav>
+		<?php endif; ?>
 		<div class="wsu-s-footer__contact-container">
-			<p class="wsu-s-footer__contact-info"><span class="wsu-s-footer__name">Lorem ipsum dolor sit amet</span>, PO Box 123456, <a href="tel:#" class="wsu-s-footer__contact-phone">P 509-123-4567</a>, <a href="tel:#" class="wsu-s-footer__contact-fax">F 509-123-4567</a></p>
+			<p class="wsu-s-footer__contact-info">
+				<?php if ( ! empty( $args['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $args['unit_name'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $args['address_1'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $args['address_2'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $args['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $args['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $args['email'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $args['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $args['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $args['phone'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $args['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $args['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $args['fax'] ); ?></a></span><?php endif; ?>
+			</p>
 			<ul class="wsu-s-footer__social-list">
+
+				<?php foreach ( array( 'one', 'two', 'three', 'four' ) as $location ) : ?>
+				<?php if ( ! empty( $args['channel_' . $location ] ) && ! empty( $args['channel_' . $location . '_link' ] ) ) : ?>
 				<li class="wsu-s-footer__social-list-item">
 					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-instagram"></span>
+						<span class="wsu-icon wsu-i-social-<?php echo esc_attr( $args[ 'channel_' . $location ] ); ?>"></span>
 					</a>
 				</li>
-				<li class="wsu-s-footer__social-list-item">
-					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-twitter"></span>
-					</a>
-				</li>
-				<li class="wsu-s-footer__social-list-item">
-					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-facebook"></span>
-					</a>
-				</li>
+				<?php endif; ?>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 

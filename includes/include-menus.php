@@ -23,8 +23,8 @@ class Menus {
 		register_nav_menus( 
 			array(
 				'site_nav_horizontal' => 'Site Horizontal Navigation',
-				'site_nav_vertical'   => 'Site Vertical Navigation',
-				'footer_links'        => 'Footer Links',
+				'site_nav_vertical'  => 'Site Vertical Navigation',
+				'site_footer'  => 'Site Footer',
 			)
 		);
 

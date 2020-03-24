@@ -5,6 +5,9 @@ class Components {
 
 
 	public function init() {
+
+		self::require_class( 'component' );
+
 	}
 
 
@@ -51,6 +54,13 @@ class Components {
 		} // End if
 
 		return $component;
+
+	}
+
+
+	public static function require_class( $class_slug ) {
+
+		require_once get_template_directory() . '/components/' . $class_slug . '.php';
 
 	}
 

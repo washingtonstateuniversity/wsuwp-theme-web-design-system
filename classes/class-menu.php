@@ -55,32 +55,35 @@ class Menu {
 
 		$menu_items = wp_get_nav_menu_items( $this->menu_id, array( 'update_post_term_cache' => false ) );
 
-		_wp_menu_item_classes_by_context( $menu_items );
+		if ( is_array( $menu_items ) && ! empty( $menu_items ) ) {
 
-		foreach ( $menu_items as $menu_item ) {
+			_wp_menu_item_classes_by_context( $menu_items );
 
-			$menu_key = 'menu-' . $menu_item->ID;
+			foreach ( $menu_items as $menu_item ) {
 
-			$this->menu_items[ $menu_key ] = $menu_item;
+				$menu_key = 'menu-' . $menu_item->ID;
 
-			if ( isset( $menu_item->menu_item_parent ) && ! empty( $menu_item->menu_item_parent ) ) {
+				$this->menu_items[ $menu_key ] = $menu_item;
 
-				$parent_key = 'menu-' . $menu_item->menu_item_parent;
+				if ( isset( $menu_item->menu_item_parent ) && ! empty( $menu_item->menu_item_parent ) ) {
 
-				if ( ! array_key_exists( $parent_key, $this->menu_items_children ) ) {
+					$parent_key = 'menu-' . $menu_item->menu_item_parent;
 
-					$this->menu_items_children[ $parent_key ] = array();
+					if ( ! array_key_exists( $parent_key, $this->menu_items_children ) ) {
 
-				}
+						$this->menu_items_children[ $parent_key ] = array();
 
-				$this->menu_items_children[ $parent_key ][] = $menu_key;
+					}
 
-			} else {
+					$this->menu_items_children[ $parent_key ][] = $menu_key;
 
-				$this->menu_items_parents[] = $menu_key;
+				} else {
 
-			} // End if
-		} // End foreach
+					$this->menu_items_parents[] = $menu_key;
+
+				} // End if
+			} // End foreach
+		}
 
 	}
 
