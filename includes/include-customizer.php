@@ -73,7 +73,7 @@ class Customizer {
 			'Section_Contact',
 			//'Section_Global_Header',
 			//'Section_Global_Footer',
-			//'Section_Site_Header',
+			'Section_Site_Header',
 			'Section_Site_Footer',
 			'Section_Social',
 			//'Section_Site_Nav_Vertical',

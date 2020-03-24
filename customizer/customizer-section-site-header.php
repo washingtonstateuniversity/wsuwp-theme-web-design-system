@@ -1,59 +1,55 @@
 <?php namespace WSUWP\Theme\WDS;
 
-class Customizer_Section_Site_Header {
+class Customizer_Section_Site_Header extends Customizer_Section {
 
-	protected $section_id = 'wsu_section_wsd_component_site_header';
-	protected $wp_customize;
-	protected $panel_id;
-
-
-	public function __construct( $wp_customize, $panel_id ) {
-
-		$this->wp_customize = $wp_customize;
-		$this->panel_id = $panel_id;
-
-	}
-
-
-	public function get( $property ) {
-
-		switch ( $property ) {
-
-			case 'section_id':
-				return $this->section_id;
-			case 'panel_id':
-				return $this->panel_id;
-			default:
-				return '';
-		}
-
-	}
+	protected $section_title  = 'Site Header';
+	protected $key_base       = 'site_header';
+	protected $settings_group = 'components';
 
 
 	public function add_section() {
 
-		$this->wp_customize->add_setting(
-			'wsu_theme[wds][site_header][is_active]',
+		$this->wp_customize->add_section(
+			$this->get( 'section_id' ),
 			array(
-				'default'     => 'off',
+				'title'      => $this->get( 'section_title' ),
+				'priority'   => 30,
+				'panel'      => $this->get( 'settings_group' ),
+			)
+		);
+
+		$this->wp_customize->add_setting(
+			$this->get_setting_key( 'is_active' ),
+			array(
+				'default'     => true,
 				'transport'   => 'refresh',
 			)
 		);
 
-		$this->wp_customize->add_section(
-			$this->get( 'section_id' ),
+		$this->wp_customize->add_setting(
+			$this->get_setting_key( 'show_on_home' ),
 			array(
-				'title'      => 'Site Header',
-				'priority'   => 30,
-				'panel'      => $this->panel_id,
+				'default'     => true,
+				'transport'   => 'refresh',
+			)
+		);
+
+
+		$this->wp_customize->add_control(
+			$this->get_control_key( 'is_active' ),
+			array(
+				'settings' => $this->get_setting_key( 'is_active' ),
+				'label'    => 'Show Site Header',
+				'section'  => $this->get( 'section_id' ),
+				'type'     => 'checkbox',
 			)
 		);
 
 		$this->wp_customize->add_control(
-			'wsu_theme_wds_show_site_header_control',
+			$this->get_control_key( 'show_on_home' ),
 			array(
-				'settings' => 'wsu_theme[wds][site_header][is_active]',
-				'label'    => 'Show Site Header',
+				'settings' => $this->get_setting_key( 'show_on_home' ),
+				'label'    => 'Show on Home Page',
 				'section'  => $this->get( 'section_id' ),
 				'type'     => 'checkbox',
 			)

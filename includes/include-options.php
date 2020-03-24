@@ -14,7 +14,8 @@ class Options {
 				'is_active' => true,
 			),
 			'site_header' => array(
-				'is_active' => true,
+				'is_active'    => true,
+				'show_on_home' => true, 
 			),
 			'site_footer' => array(
 				'is_active'      => true,
