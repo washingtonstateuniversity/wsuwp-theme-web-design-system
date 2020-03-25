@@ -1,5 +1,5 @@
 <!-- COMPONENT:START -->
-<div class="wsu-s-nav-vertical__wrapper wsu-u-no-js <?php echo esc_attr( $wrapper_class ); ?>">
+<div class="wsu-s-nav-vertical__wrapper wsu-u-no-js <?php echo esc_attr( $args['wrapper_class'] ); ?>">
 	<nav class="wsu-s-nav-vertical__nav-container" aria-label="Vertical Site Navigation">
 		<a href="#" class="wsu-s-nav-vertical__nav-container-close-link">
 			<span class="wsu-icon wsu-i-x-close"></span>

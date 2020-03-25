@@ -76,7 +76,7 @@ class Customizer {
 			'Section_Site_Header',
 			'Section_Site_Footer',
 			'Section_Social',
-			//'Section_Site_Nav_Vertical',
+			'Section_Site_Nav_Vertical',
 		);
 
 		$theme_key    = Options::get( 'theme_key' );

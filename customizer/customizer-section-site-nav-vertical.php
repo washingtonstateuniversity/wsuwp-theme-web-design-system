@@ -1,59 +1,37 @@
 <?php namespace WSUWP\Theme\WDS;
 
-class Customizer_Section_Site_Nav_Vertical {
+class Customizer_Section_Site_Nav_Vertical extends Customizer_Section {
 
-	protected $section_id = 'wsu_wsd_theme_option_components_site_nav_vertical';
-	protected $wp_customize;
-	protected $panel_id;
-
-
-	public function __construct( $wp_customize, $panel_id ) {
-
-		$this->wp_customize = $wp_customize;
-		$this->panel_id = $panel_id;
-
-	}
-
-
-	public function get( $property ) {
-
-		switch ( $property ) {
-
-			case 'section_id':
-				return $this->section_id;
-			case 'panel_id':
-				return $this->panel_id;
-			default:
-				return '';
-		}
-
-	}
+	protected $section_title  = 'Site Nav Vertical';
+	protected $key_base       = 'site_nav_vertical';
+	protected $settings_group = 'components';
 
 
 	public function add_section() {
 
-		$this->wp_customize->add_setting(
-			'wsu_wsd_theme_option[components][site_nav_vertical][is_active]',
+		$this->wp_customize->add_section(
+			$this->get( 'section_id' ),
 			array(
-				'default'     => 'off',
+				'title'      => $this->get( 'section_title' ),
+				'priority'   => 30,
+				'panel'      => $this->get( 'settings_group' ),
+			)
+		);
+
+		$this->wp_customize->add_setting(
+			$this->get_setting_key( 'start_open' ),
+			array(
+				'default'     => true,
 				'transport'   => 'refresh',
 			)
 		);
 
-		$this->wp_customize->add_section(
-			$this->get( 'section_id' ),
-			array(
-				'title'      => 'Vertical Navigation',
-				'priority'   => 30,
-				'panel'      => $this->panel_id,
-			)
-		);
 
 		$this->wp_customize->add_control(
-			'wsu_wsd_theme_option_components_site_nav_vertical_is_active_control',
+			$this->get_control_key( 'start_open' ),
 			array(
-				'settings' => 'wsu_wsd_theme_option[components][site_nav_vertical][is_active]',
-				'label'    => 'Show Vertical Nav',
+				'settings' => $this->get_setting_key( 'start_open' ),
+				'label'    => 'Start Open',
 				'section'  => $this->get( 'section_id' ),
 				'type'     => 'checkbox',
 			)
@@ -62,3 +40,4 @@ class Customizer_Section_Site_Nav_Vertical {
 	}
 
 }
+

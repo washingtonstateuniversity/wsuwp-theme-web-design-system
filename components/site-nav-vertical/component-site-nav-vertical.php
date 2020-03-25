@@ -1,40 +1,46 @@
 <?php namespace WSUWP\Theme\WDS;
 
-class Component_Site_Nav_Vertical {
+class Component_Site_Nav_Vertical extends Component  {
 
 	protected $args = array();
-
-	protected $menu_id = '';
-
-
-	public function __construct( $args = array() ) {
-
-		Theme::require_class( 'menu' );
-
-		if ( ! empty( $args ) ) {
-
-			$this->args = $args;
-
-		}
-
-	}
+	protected $default_args = array(
+		'is_active'     => true,
+		'start_open'    => true,
+		'wrapper_class' => '',
+	);
 
 
 	public function render() {
 
-		$is_active = Options::get_component_option( 'site_nav_vertical', 'is_active' );
+		Theme::require_class( 'menu' );
 
-		if ( $is_active ) {
+		$component_options = Options::get_options( 'components', 'site_nav_vertical' );
+
+		$args = array_merge( $this->args, $component_options );
+		$args = $this->set_args( $args );
+
+		if ( $args['is_active'] ) {
 
 			$menu = new Menu( 'site_nav_vertical' );
-
-			$wrapper_class = ( ! empty( $this->args['wrapper_class'] ) ) ? implode( ' ', $this->args['wrapper_class'] ) : '';
 
 			$menu_items = $menu->get( 'menu_array' );
 
 			include __DIR__ . '/template.php';
 
 		}
+
+	}
+
+
+	protected function set_args( $args ) {
+
+		if ( ! empty( $args['start_open'] ) ) {
+
+			$args['wrapper_class'] .= ' wsu-s-nav-vertical__wrapper--open';
+
+		}
+
+		return $args;
 
 	}
 
