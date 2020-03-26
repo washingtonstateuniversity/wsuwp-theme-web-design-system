@@ -42,6 +42,15 @@ class Customizer_Section_Content_Hero extends Customizer_Section {
 			)
 		);
 
+		$this->wp_customize->add_setting(
+			$this->get_setting_key( 'subtitle' ),
+			array(
+				'default'     => '',
+				'transport'   => 'refresh',
+			)
+		);
+
+
 
 		$this->wp_customize->add_control(
 			$this->get_control_key( 'is_active' ),
@@ -70,6 +79,16 @@ class Customizer_Section_Content_Hero extends Customizer_Section {
 			array(
 				'settings' => $this->get_setting_key( 'title' ),
 				'label'    => 'Title',
+				'section'  => $this->get( 'section_id' ),
+				'type'     => 'text',
+			)
+		);
+
+		$this->wp_customize->add_control(
+			$this->get_control_key( 'subtitle' ),
+			array(
+				'settings' => $this->get_setting_key( 'subtitle' ),
+				'label'    => 'Subtitle',
 				'section'  => $this->get( 'section_id' ),
 				'type'     => 'text',
 			)
