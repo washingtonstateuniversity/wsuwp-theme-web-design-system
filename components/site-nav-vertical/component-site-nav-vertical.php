@@ -36,7 +36,7 @@ class Component_Site_Nav_Vertical extends Component  {
 
 		if ( ! empty( $args['start_open'] ) ) {
 
-			$args['wrapper_class'] .= ' wsu-s-nav-vertical__wrapper--open';
+			$args['wrapper_class'] .= ' wsu-s-nav-vertical__wrapper--start-open';
 
 		}
 

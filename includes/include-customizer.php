@@ -16,6 +16,7 @@ class Customizer {
 		self::require_class( 'section-site-footer' );
 		self::require_class( 'section-contact' );
 		self::require_class( 'section-social' );
+		self::require_class( 'section-content-hero' );
 
 	}
 
@@ -77,6 +78,7 @@ class Customizer {
 			'Section_Site_Footer',
 			'Section_Social',
 			'Section_Site_Nav_Vertical',
+			'Section_Content_Hero',
 		);
 
 		$theme_key    = Options::get( 'theme_key' );

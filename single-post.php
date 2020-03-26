@@ -9,6 +9,7 @@
 		<!-- SITE CONTAINER:START -->
 		<?php get_template_part( 'template-parts/site-header', get_post_type() ); ?>
 		<?php get_template_part( 'template-parts/site-nav-horizontal', get_post_type() ); ?>
+		<?php get_template_part( 'template-parts/hero-banner', get_post_type() ); ?>
 		<div class="wsu-s-main-container">
 			<div class="wsu-c-container wsu-c-content wsu-c-container--sidebar-right">
 				<div class="wsu-c-container__main">

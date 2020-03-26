@@ -26,6 +26,15 @@ class Options {
 			'site_nav_vertical' => array(
 				'is_active' => true,
 			),
+			'content_hero' => array(
+				'is_active' => true,
+				'img_src'      => '',
+				'title'        => '',
+				'subtitle'     => '',
+				'button_text'  => '',
+				'button_link'  => '',
+				'caption_text' => '',
+			),
 		),
 		'site_info' => array(
 			'contact' => array(
