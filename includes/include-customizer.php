@@ -17,6 +17,7 @@ class Customizer {
 		self::require_class( 'section-contact' );
 		self::require_class( 'section-social' );
 		self::require_class( 'section-content-hero' );
+		self::require_class( 'section-advanced' );
 
 	}
 
@@ -61,7 +62,7 @@ class Customizer {
 		);
 
 		$wp_customize->add_panel(
-			'site_info',
+			'site_setup',
 			array(
 				'priority'       => 10,
 				'capability'     => 'edit_theme_options',
@@ -71,26 +72,27 @@ class Customizer {
 		);
 
 		$customizer_section_classes = array(
-			'Section_Contact',
+			'Section_Contact'          => 'site_setup',
 			//'Section_Global_Header',
 			//'Section_Global_Footer',
-			'Section_Site_Header',
-			'Section_Site_Footer',
-			'Section_Social',
-			'Section_Site_Nav_Vertical',
-			'Section_Content_Hero',
+			'Section_Site_Header'       => 'components',
+			'Section_Site_Footer'       => 'components',
+			'Section_Social'            => 'site_setup',
+			'Section_Site_Nav_Vertical' => 'components',
+			'Section_Content_Hero'      => 'components',
+			'Section_Advanced'          => 'site_setup',
 		);
 
 		$theme_key    = Options::get( 'theme_key' );
 		$settings_key = Options::get( 'settings_key' );
 
-		foreach ( $customizer_section_classes as $section_class_slug ) {
+		foreach ( $customizer_section_classes as $section_class_slug => $panel ) {
 
 			$section_class = __NAMESPACE__ . '\Customizer_' . $section_class_slug;
 
 			if ( class_exists( $section_class ) ) {
 
-				$section = new $section_class( $wp_customize, self::get( 'panel_id' ), $theme_key, $settings_key );
+				$section = new $section_class( $wp_customize, $panel, $theme_key, $settings_key );
 				$section->add_section();
 
 			} // End if
