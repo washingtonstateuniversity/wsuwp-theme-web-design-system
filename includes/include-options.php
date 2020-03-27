@@ -36,7 +36,7 @@ class Options {
 				'caption_text' => '',
 			),
 		),
-		'site_info' => array(
+		'site_setup' => array(
 			'contact' => array(
 				'unit_name' => '',
 				'address_1' => '',
@@ -57,6 +57,10 @@ class Options {
 				'channel_three_link' => '',
 				'channel_four'       => '',
 				'channel_four_link'  => '',
+			),
+			'advanced' => array(
+				'wds_version' => '',
+				'beta_mode'   => false,
 			),
 		),
 	);
