@@ -1,4 +1,4 @@
-<div class="wsu-c-hero__wrapper wsu-c-hero__wrapper--full-width wsu-u-no-js">
+<div class="wsu-c-hero__wrapper wsu-c-full-width wsu-u-no-js">
 	<div class="wsu-c-hero__container" style="background-image: url('<?php echo esc_attr( $args['img_src'] ); ?>');">
 		<div class="wsu-c-hero__content">
 			<?php if ( ! empty( $args['title'] ) ) : ?><div class="wsu-c-hero__title"><?php echo wp_kses_post( $args['title'] ); ?></div><?php endif; ?>
