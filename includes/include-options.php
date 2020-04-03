@@ -60,7 +60,7 @@ class Options {
 			),
 			'advanced' => array(
 				'wds_version' => '',
-				'beta_mode'   => false,
+				'beta_mode'   => 'off',
 			),
 		),
 	);
