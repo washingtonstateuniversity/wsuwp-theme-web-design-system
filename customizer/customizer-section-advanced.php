@@ -23,10 +23,11 @@ class Customizer_Section_Advanced extends Customizer_Section {
 		$this->wp_customize->add_setting(
 			$this->get_setting_key( 'beta_mode' ),
 			array(
-				'default'     => false,
+				'default'     => 'off',
 				'transport'   => 'refresh',
 			)
 		);
+
 
 		$this->wp_customize->add_control(
 			$this->get_control_key( 'beta_mode' ),
@@ -34,7 +35,12 @@ class Customizer_Section_Advanced extends Customizer_Section {
 				'settings' => $this->get_setting_key( 'beta_mode' ),
 				'label'    => 'Enable Beta Mode',
 				'section'  => $this->get( 'section_id' ),
-				'type'     => 'checkbox',
+				'type'     => 'select',
+				'choices'  => array(
+					'off' => 'Off',
+					'all' => 'All Visitors',
+					'admin' => 'Logged in Users',
+				),
 			)
 		);
 
