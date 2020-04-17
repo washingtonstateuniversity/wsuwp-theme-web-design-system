@@ -7,6 +7,14 @@ class Theme_Config {
 	public function init() {
 
 		add_action( 'after_setup_theme', __CLASS__ . '::theme_setup' );
+		add_action('wp_enqueue_scripts', __CLASS__ . '::enqueue_scripts');
+
+	}
+
+
+	public static function enqueue_scripts() {
+
+		wp_enqueue_style( 'wsuwpwebdesignsystem-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css') );
 
 	}
 
