@@ -11,14 +11,14 @@ Tags: light
 */
 
 /* TODO: Should these move to somewhere else? How do we want to handle styles specific to WP theme implementation? */
-@media screen and (max-width: 782px) {
+body.admin-bar.wsu-s-nav-vertical__nav--is-open .wsu-g-header__wrapper,
+.admin-bar .wsu-g-header__wrapper {
+	top: 46px;
+}
+
+@media screen and (min-width: 783px) {
 	body.admin-bar.wsu-s-nav-vertical__nav--is-open .wsu-g-header__wrapper,
 	.admin-bar .wsu-g-header__wrapper {
 		top: 30px;
 	}
-}
-
-body.admin-bar.wsu-s-nav-vertical__nav--is-open .wsu-g-header__wrapper,
-.admin-bar .wsu-g-header__wrapper {
-	top: 46px;
 }
