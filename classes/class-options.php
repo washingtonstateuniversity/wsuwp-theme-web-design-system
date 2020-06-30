@@ -20,7 +20,8 @@ class Options {
 				'is_active' => true,
 			),
 			'site_nav_vertical' => array(
-				'is_active' => true,
+				'is_active'  => true,
+				'start_open' => true,
 			),
 		),
 
