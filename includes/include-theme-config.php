@@ -19,6 +19,8 @@ class Theme_Config {
 
 		add_theme_support( 'title-tag' );
 
+		add_theme_support( 'title-tag' );
+
 		add_theme_support(
 			'html5',
 			array(
@@ -31,6 +33,16 @@ class Theme_Config {
 				'style',
 			)
 		);
+
+		add_theme_support( 'editor-color-palette', array() );
+
+		add_theme_support( 'disable-custom-colors' );
+
+		add_theme_support( 'disable-custom-font-sizes' );
+
+		add_theme_support( 'editor-font-sizes', array() );
+
+		add_theme_support( 'editor-gradient-presets', array() );
 
 	}
 
