@@ -8,15 +8,12 @@ class Customizer_Section {
 	protected $key_base      = '';
 	protected $theme_key;
 	protected $settings_key;
-	protected $wp_customize;
-	protected $panel_id;
+	protected $panel_id = 'wds';
 
 
-	public function __construct( $wp_customize, $panel_id, $theme_key, $settings_key ) {
+	public function __construct( $theme_key, $settings_key ) {
 
 		$this->theme_key     = $theme_key;
-		$this->wp_customize  = $wp_customize;
-		$this->panel_id      = $panel_id;
 		$this->settings_key  = $settings_key;
 
 	}
@@ -42,6 +39,25 @@ class Customizer_Section {
 				return $this->settings_group;
 			default:
 				return '';
+		}
+
+	}
+
+	public function add_section( $wp_customize ) {
+
+		$wp_customize->add_section(
+			$this->get( 'section_id' ),
+			array(
+				'title'      => $this->get( 'section_title' ),
+				'priority'   => 30,
+				'panel'      => $this->get( 'panel_id' ),
+			)
+		);
+
+		if ( method_exists( $this, 'add_controls' ) ) {
+
+			$this->add_controls( $wp_customize );
+
 		}
 
 	}

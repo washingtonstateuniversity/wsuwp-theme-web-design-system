@@ -9,15 +9,16 @@ class Customizer {
 	public function __construct() {
 
 		self::require_class( 'section' );
-		self::require_class( 'section-global-header' );
-		self::require_class( 'section-global-footer' );
-		self::require_class( 'section-site-header' );
-		self::require_class( 'section-site-nav-vertical' );
-		self::require_class( 'section-site-footer' );
-		self::require_class( 'section-contact' );
-		self::require_class( 'section-social' );
-		self::require_class( 'section-content-hero' );
-		self::require_class( 'section-advanced' );
+		self::require_class( 'section-wds-settings' );
+		//self::require_class( 'section-global-header' );
+		//self::require_class( 'section-global-footer' );
+		//self::require_class( 'section-site-header' );
+		//self::require_class( 'section-site-nav-vertical' );
+		//self::require_class( 'section-site-footer' );
+		//self::require_class( 'section-contact' );
+		//self::require_class( 'section-social' );
+		//self::require_class( 'section-content-hero' );
+		//self::require_class( 'section-advanced' );
 
 	}
 
@@ -40,7 +41,7 @@ class Customizer {
 	} 
 
 
-	public static function require_class( $class_slug ) {
+	protected static function require_class( $class_slug ) {
 
 		require_once get_template_directory() . '/customizer/customizer-' . $class_slug . '.php';
 
@@ -52,48 +53,30 @@ class Customizer {
 		self::require_class( 'control-html' );
 
 		$wp_customize->add_panel(
-			'components',
+			'wds',
 			array(
 				'priority'       => 10,
 				'capability'     => 'edit_theme_options',
-				'title'          => 'Web Design System Components',
-				'description'    => 'Several settings pertaining my theme',
-			)
-		);
-
-		$wp_customize->add_panel(
-			'site_setup',
-			array(
-				'priority'       => 10,
-				'capability'     => 'edit_theme_options',
-				'title'          => 'Site Setup',
+				'title'          => 'Web Design System',
 				'description'    => 'Several settings pertaining my theme',
 			)
 		);
 
 		$customizer_section_classes = array(
-			'Section_Contact'          => 'site_setup',
-			//'Section_Global_Header',
-			//'Section_Global_Footer',
-			'Section_Site_Header'       => 'components',
-			'Section_Site_Footer'       => 'components',
-			'Section_Social'            => 'site_setup',
-			'Section_Site_Nav_Vertical' => 'components',
-			'Section_Content_Hero'      => 'components',
-			'Section_Advanced'          => 'site_setup',
+			'Customizer_WDS_Settings',
 		);
 
 		$theme_key    = Options::get( 'theme_key' );
 		$settings_key = Options::get( 'settings_key' );
 
-		foreach ( $customizer_section_classes as $section_class_slug => $panel ) {
+		foreach ( $customizer_section_classes as $slug ) {
 
-			$section_class = __NAMESPACE__ . '\Customizer_' . $section_class_slug;
+			$section_class = __NAMESPACE__ . '\\' . $slug;
 
 			if ( class_exists( $section_class ) ) {
 
-				$section = new $section_class( $wp_customize, $panel, $theme_key, $settings_key );
-				$section->add_section();
+				$section = new $section_class( $theme_key, $settings_key );
+				$section->add_section( $wp_customize );
 
 			} // End if
 		}
