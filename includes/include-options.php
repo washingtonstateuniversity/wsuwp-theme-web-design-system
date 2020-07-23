@@ -15,7 +15,7 @@ class Options {
 			),
 			'site_header' => array(
 				'is_active'    => true,
-				'show_on_home' => true, 
+				'show_on_home' => true,
 			),
 			'site_footer' => array(
 				'is_active'      => true,
@@ -27,7 +27,7 @@ class Options {
 				'is_active' => true,
 			),
 			'content_hero' => array(
-				'is_active' => true,
+				'is_active' => false,
 				'img_src'      => '',
 				'title'        => '',
 				'subtitle'     => '',
