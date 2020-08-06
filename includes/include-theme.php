@@ -32,9 +32,10 @@ class Theme {
 		require_once __DIR__ . '/include-media.php';
 		require_once __DIR__ . '/include-scripts.php';
 		require_once __DIR__ . '/include-components.php';
-		require_once __DIR__ . '/include-customizer.php';
+		require_once __DIR__ . '/customizer/include-customizer.php';
 		require_once __DIR__ . '/include-sidebars.php';
 		require_once __DIR__ . '/include-demo.php';
+		require_once __DIR__ . '/include-blocks.php';
 
 	}
 
