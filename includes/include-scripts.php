@@ -20,24 +20,8 @@ class Scripts {
 
 	public static function enqueue_scripts() {
 
-		$setup_options = Options::get_options( 'site_setup', 'advanced' );
-
-		if ( ! empty( $setup_options['wds_version'] ) ) {
-
-			$wds_version = $setup_options['wds_version'];
-			$version = Theme::get( 'version' );
-
-		} elseif ( 'all' === $setup_options['beta_mode'] || ( 'admin' === $setup_options['beta_mode'] && is_user_logged_in() ) ) {
-
-			$wds_version = 'beta';
-			$version = time();
-
-		} else  {
-
-			$wds_version = '1';
-			$version = Theme::get( 'version' );
-
-		}
+		$wds_version = ( ! empty( get_theme_mod( 'wsu_wds_settings_version' ) ) ) ? get_theme_mod( 'wsu_wds_settings_version' ) : '1.x';
+		$version     = Theme::get( 'version' );
 
 		wp_enqueue_style( 'wsu_design_system_normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', array(), $version );
 

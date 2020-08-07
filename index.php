@@ -5,7 +5,7 @@
 <div class="wsu-g-container">
 	<?php get_template_part( 'template-parts/site-nav-vertical', get_post_type() ); ?>
 	<!-- SITE WRAPPER:START -->
-	<div class="wsu-s-wrapper">
+	<div class="wsu-s-container">
 		<!-- SITE CONTAINER:START -->
 		<?php get_template_part( 'template-parts/site-header', get_post_type() ); ?>
 		<?php get_template_part( 'template-parts/site-nav-horizontal', get_post_type() ); ?>

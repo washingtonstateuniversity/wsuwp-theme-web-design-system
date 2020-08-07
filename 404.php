@@ -5,7 +5,7 @@
 <div class="wsu-g-container">
 	<?php get_template_part( 'template-parts/site-nav-vertical', get_post_type() ); ?>
 	<!-- SITE WRAPPER:START -->
-	<div class="wsu-s-wrapper">
+	<div class="wsu-s-container">
 		<!-- SITE CONTAINER:START -->
 		<div class="wsu-s-main-container">
 			<div class="wsu-c-container wsu-c-content">
