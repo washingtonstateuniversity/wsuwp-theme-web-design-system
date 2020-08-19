@@ -15,6 +15,8 @@ class Scripts {
 
 		add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\Scripts::enqueue_scripts' );
 
+		add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\Scripts::enqueue_admin_scripts' );
+
 	}
 
 
@@ -29,7 +31,20 @@ class Scripts {
 
 		wp_enqueue_style( 'wsu_design_system_bundle', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/wsu-design-system.bundle.dist.css', array(), $version );
 
-		wp_enqueue_script( 'wsu_design_system_css', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/wsu-design-system.bundle.dist.js', array(), $version, true );
+		if ( is_admin_bar_showing() ) {
+			wp_enqueue_style( 'wsu_design_system_wordpress', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/platforms/wsu-design-system.wordpress.bundle.dist.css', array(), $version );
+		}
+
+		wp_enqueue_script( 'wsu_design_system_js', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/wsu-design-system.bundle.dist.js', array(), $version, true );
+
+	}
+
+	public static function enqueue_admin_scripts() {
+
+		$wds_version = ( ! empty( get_theme_mod( 'wsu_wds_settings_version' ) ) ) ? get_theme_mod( 'wsu_wds_settings_version' ) : '1.x';
+		$version     = Theme::get( 'version' );
+
+		wp_enqueue_style( 'wsu_design_system_wordpress_admin', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/platforms/wsu-design-system.wordpress.admin.bundle.dist.css', array(), $version );
 
 	}
 
