@@ -75,9 +75,9 @@
 			</a>
 		</div>
 		<div class="wsu-g-header__menu-icon-container">
-			<a class="wsu-g-header__menu-icon-link" href="#">
+			<button class="wsu-g-header__menu-icon-link" onClick="wsu_wds.vertical_nav.toggle_panel()">
 				<span class="wsu-icon wsu-i-menu"></span>
-			</a>
+			</button>
 		</div>
 	</header>
 </div>
