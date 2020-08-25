@@ -49,7 +49,7 @@
 			<?php endforeach; ?>
 		</ul>
 	</nav>
-	<a class="wsu-s-nav-vertical__menu-icon-link" href="#" aria-haspopup="true" aria-expanded="true">
+	<a class="wsu-s-nav-vertical__menu-icon-link" href="#" aria-haspopup="true" aria-expanded="true" tabindex="0">
 		<div class="wsu-s-nav-vertical__menu-icon-container">
 			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
 			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
