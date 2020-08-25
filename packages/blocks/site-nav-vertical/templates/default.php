@@ -1,5 +1,13 @@
 <!-- COMPONENT:START -->
 <div class="wsu-s-nav-vertical__wrapper wsu-u-no-js <?php echo esc_attr( $atts['wrapper_class'] ); ?>">
+	<a class="wsu-s-nav-vertical__menu-icon-link" href="#" aria-haspopup="true" aria-expanded="true" tabindex="0">
+		<div class="wsu-s-nav-vertical__menu-icon-container">
+			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
+			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
+			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
+		</div>
+		<span class="wsu-s-nav-vertical__menu-label"></span>
+	</a>
 	<nav class="wsu-s-nav-vertical__nav-container" aria-label="Vertical Site Navigation">
 		<a href="#" class="wsu-s-nav-vertical__nav-container-close-link">
 			<span class="wsu-icon wsu-i-x-close"></span>
@@ -49,13 +57,5 @@
 			<?php endforeach; ?>
 		</ul>
 	</nav>
-	<a class="wsu-s-nav-vertical__menu-icon-link" href="#" aria-haspopup="true" aria-expanded="true" tabindex="0">
-		<div class="wsu-s-nav-vertical__menu-icon-container">
-			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
-			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
-			<div class="wsu-s-nav-vertical__menu-icon-bar"></div>
-		</div>
-		<span class="wsu-s-nav-vertical__menu-label"></span>
-	</a>
 </div>
 <!-- COMPONENT:END -->
