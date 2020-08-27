@@ -12,7 +12,9 @@
 		<?php get_template_part( 'template-parts/wrappers/wsu-s-main-container-start', get_post_type() ); ?>
 			<?php get_template_part( 'template-parts/wrappers/wsu-c-container-side-right-start', get_post_type() ); ?>
 				<div class="wsu-c-container__main">
+				<?php get_template_part( 'template-parts/widget-areas/before-page-content.php', get_post_type() ); ?>
 				<?php get_template_part( 'template-parts/search/search-results', get_post_type() ); ?>
+				<?php get_template_part( 'template-parts/widget-areas/after-page-content.php', get_post_type() ); ?>
 				</div>
 				<aside class="wsu-c-container__aside">
 				<?php get_template_part( 'template-parts/sidebar', get_post_type() ); ?>
