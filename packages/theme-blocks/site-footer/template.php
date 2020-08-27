@@ -1,16 +1,16 @@
 <!-- COMPONENT:START -->
 <div class="wsu-s-footer__wrapper">
 	<footer class="wsu-s-footer__container">
-		<?php if ( ! empty( $args['footer_title'] ) || ! empty( $args['footer_caption'] ) ) : ?>
+		<?php if ( ! empty( $atts['footer_title'] ) || ! empty( $atts['footer_caption'] ) ) : ?>
 		<div class="wsu-s-footer__overview-container">
-			<?php if ( ! empty( $args['footer_title'] ) ) : ?><div class="wsu-s-footer__overview-title"><?php echo esc_html( $args['footer_title'] ); ?></div><?php endif; ?>
-			<?php if ( ! empty( $args['footer_caption'] ) ) : ?><p class="wsu-s-footer__overview-desc"><?php echo wp_kses_post( $args['footer_caption'] ); ?></p><?php endif; ?>
+			<?php if ( ! empty( $atts['footer_title'] ) ) : ?><div class="wsu-s-footer__overview-title"><?php echo esc_html( $atts['footer_title'] ); ?></div><?php endif; ?>
+			<?php if ( ! empty( $atts['footer_caption'] ) ) : ?><p class="wsu-s-footer__overview-desc"><?php echo wp_kses_post( $atts['footer_caption'] ); ?></p><?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<?php if ( ! empty( $args['menu'] ) ) : ?>
+		<?php if ( ! empty( $atts['menu'] ) ) : ?>
 		<nav class="wsu-s-footer__nav">
 			<ul class="wsu-s-footer_nav-list">
-				<?php foreach ( $args['menu'] as $parent_item ): ?>
+				<?php foreach ( $atts['menu'] as $parent_item ): ?>
 				<li class="wsu-s-footer__nav-item<?php if ( ! empty( $parent_item['children'] ) ) : ?>--has-children<?php endif; ?>">
 					<a href="<?php echo esc_url( $parent_item['url'] ); ?>" class="wsu-s-footer__nav-link">
 						<?php echo esc_html( $parent_item['title'] ); ?>
@@ -33,20 +33,20 @@
 		<?php endif; ?>
 		<div class="wsu-s-footer__contact-container">
 			<p class="wsu-s-footer__contact-info">
-				<?php if ( ! empty( $args['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $args['unit_name'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $args['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $args['address_1'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $args['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $args['address_2'] ); ?></span><?php endif; ?>
-				<?php if ( ! empty( $args['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $args['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $args['email'] ); ?></a></span><?php endif; ?>
-				<?php if ( ! empty( $args['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $args['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $args['phone'] ); ?></a></span><?php endif; ?>
-				<?php if ( ! empty( $args['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $args['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $args['fax'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $atts['unit_name'] ) ) : ?><span class="wsu-s-footer__name"><?php echo esc_html( $atts['unit_name'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $atts['address_1'] ) ) : ?><span class="wsu-s-footer__address_1"><?php echo esc_html( $atts['address_1'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $atts['address_2'] ) ) : ?><span class="wsu-s-footer__address_2"><?php echo esc_html( $atts['address_2'] ); ?></span><?php endif; ?>
+				<?php if ( ! empty( $atts['email'] ) ) : ?><span class="wsu-s-footer__contact-email"><a href="mailto:<?php echo esc_attr( $atts['email'] ); ?>" class="wsu-s-footer__contact-email__link">E <?php echo esc_html( $atts['email'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $atts['phone'] ) ) : ?><span class="wsu-s-footer__contact-phone"><a href="tel:<?php echo esc_attr( $atts['phone'] ); ?>" class="wsu-s-footer__contact-phone__link">P <?php echo esc_html( $atts['phone'] ); ?></a></span><?php endif; ?>
+				<?php if ( ! empty( $atts['fax'] ) ) : ?><span class="wsu-s-footer__contact-fax"><a href="tel:<?php echo esc_attr( $atts['fax'] ); ?>" class="wsu-s-footer__contact-fax__link">F <?php echo esc_html( $atts['fax'] ); ?></a></span><?php endif; ?>
 			</p>
 			<ul class="wsu-s-footer__social-list">
 
 				<?php foreach ( array( 'one', 'two', 'three', 'four' ) as $location ) : ?>
-				<?php if ( ! empty( $args['channel_' . $location ] ) && ! empty( $args['channel_' . $location . '_link' ] ) ) : ?>
+				<?php if ( ! empty( $atts['channel_' . $location ] ) && ! empty( $atts['channel_' . $location . '_link' ] ) ) : ?>
 				<li class="wsu-s-footer__social-list-item">
 					<a href="#" class="wsu-s-footer__social-item-link">
-						<span class="wsu-icon wsu-i-social-<?php echo esc_attr( $args[ 'channel_' . $location ] ); ?>"></span>
+						<span class="wsu-icon wsu-i-social-<?php echo esc_attr( $atts[ 'channel_' . $location ] ); ?>"></span>
 					</a>
 				</li>
 				<?php endif; ?>

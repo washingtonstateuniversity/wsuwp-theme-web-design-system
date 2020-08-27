@@ -1,9 +1,8 @@
 <?php namespace WSUWP\Theme\WDS;
 
-class Component_Site_Footer {
+class Block_Site_Footer extends Block {
 
-	protected $args = array();
-	protected $default_options = array(
+	public static $default_atts = array(
 		'is_active'          => true,
 		'menu'               => array(),
 		'footer_title'       => '',
@@ -29,36 +28,13 @@ class Component_Site_Footer {
 	);
 
 
-	public function __construct( $args = array() ) {
+	protected static function render( $atts, $content ) {
 
 		Theme::require_class( 'menu' );
 
-		if ( ! empty( $args ) ) {
+		$atts['menu'] = Menus::get_menu_array( 'footer_links' );
 
-			$this->args = $args;
-
-		}
-
-	}
-
-
-	public function render() {
-
-		$component_options = Options::get_options( 'components', 'site_footer' );
-		$contact_options   = Options::get_options( 'site_info', 'contact' );
-		$social_options    = Options::get_options( 'site_info', 'social' ); 
-
-		$args = array_merge( 
-			$this->default_options, 
-			$component_options, 
-			$contact_options,
-			$social_options,
-			$this->args 
-		);
-
-		$args['menu'] = Menus::get_menu_array( 'footer_links' );
-
-		if ( ! empty( $args['is_active'] ) ) {
+		if ( ! empty( $atts['is_active'] ) ) {
 
 			include __DIR__ . '/template.php';
 

@@ -13,15 +13,17 @@
 		<div class="wsu-s-main-container">
 			<div class="wsu-c-container wsu-c-content wsu-c-container--sidebar-right">
 				<div class="wsu-c-container__main">
-				<?php if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/single', get_post_type() );
-					}
-				} ?>
+					<?php get_template_part( 'template-parts/widget-areas/before-page-content.php', get_post_type() ); ?>
+					<?php if ( have_posts() ) {
+						while ( have_posts() ) {
+							the_post();
+							get_template_part( 'template-parts/single', get_post_type() );
+						}
+					} ?>
+					<?php get_template_part( 'template-parts/widget-areas/after-page-content.php', get_post_type() ); ?>
 				</div>
 				<aside class="wsu-c-container__aside">
-				<?php get_template_part( 'template-parts/sidebar', get_post_type() ); ?>
+					<?php get_template_part( 'template-parts/sidebar', get_post_type() ); ?>
 				</aside>
 			</div>
 		</div>

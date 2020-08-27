@@ -4,7 +4,7 @@
 class Theme {
 
 
-	protected static $version = '0.10.3';
+	protected static $version = '0.11.0';
 
 
 	public static function get( $property ) {
@@ -31,10 +31,8 @@ class Theme {
 		require_once __DIR__ . '/include-menus.php';
 		require_once __DIR__ . '/include-media.php';
 		require_once __DIR__ . '/include-scripts.php';
-		require_once __DIR__ . '/include-components.php';
 		require_once __DIR__ . '/customizer/include-customizer.php';
 		require_once __DIR__ . '/include-sidebars.php';
-		require_once __DIR__ . '/include-demo.php';
 		require_once __DIR__ . '/include-blocks.php';
 
 	}
