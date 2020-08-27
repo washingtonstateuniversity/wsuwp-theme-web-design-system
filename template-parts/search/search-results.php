@@ -1,6 +1,6 @@
 <?php namespace WSUWP\Theme\WDS; ?>
 
-<?php Components::render( 'page-title', array('title' => 'Search') ); ?>
+<?php get_template_part( 'template-parts/search/search-title', get_post_type() ); ?>
 
 <?php get_template_part( 'template-parts/search/search-bar', get_post_type() ); ?>
 
