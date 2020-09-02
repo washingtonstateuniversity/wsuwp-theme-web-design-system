@@ -27,6 +27,18 @@ class Sidebars {
 
 		register_sidebar( 
 			array(
+			'name'          => 'Site Footer',
+			'id'            => 'site_footer',
+			'description'   => 'Widgets in this area will be shown on all posts and pages.',
+			'before_widget' => '<div class="wsu-c-site-footer-widget__wrapper %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="wsu-c-site-footer-widget__title">',
+			'after_title'   => '</h2>',
+			)
+		);
+
+		register_sidebar( 
+			array(
 			'name'          => 'After Page content',
 			'id'            => 'wsu_after_page_content',
 			'description'   => 'Widgets in this area will be shown on all posts and pages after main content.',

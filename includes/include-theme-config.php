@@ -19,8 +19,6 @@ class Theme_Config {
 
 		add_theme_support( 'title-tag' );
 
-		add_theme_support( 'title-tag' );
-
 		add_theme_support(
 			'html5',
 			array(
@@ -42,32 +40,14 @@ class Theme_Config {
 
 		add_theme_support( 'editor-font-sizes', array() );
 
+		add_theme_support( 'disable-custom-gradients' );
+
 		add_theme_support( 'editor-gradient-presets', array() );
 
-	}
-
-
-	// https://developer.wordpress.org/reference/hooks/big_image_size_threshold/
-	public static function set_max_image_size( $threshold ) {
-
-		// Set default image threshold down from 2560 to 1900px
-		$threshold = 1900;
-
-		return $threshold;
+		remove_theme_support( 'core-block-patterns' );
 
 	}
 
-
-	public static function register_menus() {
-
-		register_nav_menus(
-			array(
-				'site_nav_horizontal' => 'Site Horizontal Navigation',
-				'site_nav_vertical'  => 'Site Vertical Navigation',
-			)
-		);
-
-	}
 
 }
 

@@ -1,10 +1,11 @@
 <!-- COMPONENT:START -->
 <div class="wsu-s-footer__wrapper">
 	<footer class="wsu-s-footer__container">
-		<?php if ( ! empty( $atts['footer_title'] ) || ! empty( $atts['footer_caption'] ) ) : ?>
+		<?php if ( ! empty( $atts['footer_title'] ) || ! empty( $atts['footer_caption'] )  || ! empty( $content ) ) : ?>
 		<div class="wsu-s-footer__overview-container">
 			<?php if ( ! empty( $atts['footer_title'] ) ) : ?><div class="wsu-s-footer__overview-title"><?php echo esc_html( $atts['footer_title'] ); ?></div><?php endif; ?>
 			<?php if ( ! empty( $atts['footer_caption'] ) ) : ?><p class="wsu-s-footer__overview-desc"><?php echo wp_kses_post( $atts['footer_caption'] ); ?></p><?php endif; ?>
+			<?php if ( ! empty( $content ) ) : ?><div class="wsu-s-footer__content"><?php echo $content; ?></div><?php endif; ?>
 		</div>
 		<?php endif; ?>
 		<?php if ( ! empty( $atts['menu'] ) ) : ?>

@@ -22,6 +22,7 @@ class Customizer {
 		require_once __DIR__ . '/include-customizer-section-wds-settings.php';
 		require_once __DIR__ . '/include-customizer-section-wds-site-header.php';
 		require_once __DIR__ . '/include-customizer-section-wds-site-nav-vertical.php';
+		require_once __DIR__ . '/include-customizer-section-wds-site-footer.php';
 
 		add_action( 'customize_register', __CLASS__ . '::add_customizer_options' );
 
