@@ -32,13 +32,35 @@ class Block_Site_Footer extends Block {
 
 		Theme::require_class( 'menu' );
 
-		$atts['menu'] = Menus::get_menu_array( 'footer_links' );
+		$atts['menu'] = Menus::get_menu_array( 'site_footer' );
+
+		
+
+		$content = ( ! empty( $content ) ) ? $content : self::get_footer_content( $atts );
 
 		if ( ! empty( $atts['is_active'] ) ) {
 
 			include __DIR__ . '/template.php';
 
 		}
+
+	}
+
+	protected static function get_footer_content( $atts ) {
+
+		$content = '';
+
+		if ( is_active_sidebar( 'site_footer' ) ) {
+
+			ob_start();
+
+			dynamic_sidebar( 'site_footer' );
+
+			$content = ob_get_clean();
+
+		}
+
+		return $content;
 
 	}
 
