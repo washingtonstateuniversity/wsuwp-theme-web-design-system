@@ -1,7 +1,7 @@
 <!-- COMPONENT:START -->
 <div class="wsu-g-footer-wrapper">
 	<footer class="wsu-g-footer">
-		<div class="wsu-g-footer__copyright">&copy; Washington State University 2019</div>
+		<div class="wsu-g-footer__copyright">&copy; Washington State University <?php echo esc_html( date( 'Y' ) ); ?></div>
 		<nav class="wsu-g-footer__nav">
 			<ul class="wsu-g-footer__nav-list">
 				<li class="wsu-g-footer__nav-item">
