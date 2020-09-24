@@ -40,6 +40,11 @@ class Scripts {
 
 		wp_enqueue_style( 'wsu_design_system_bundle', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/wsu-design-system.bundle.dist.css', array(), $version );
 
+		if (wp_get_environment_type() == 'local') {
+			wp_dequeue_style( 'wsu_design_system_bundle' );
+			wp_enqueue_style( 'wsu_design_system_bundle_local', 'http://localhost:9000/bundles/dist/wsu-design-system.bundle.dist.css', array(), $version );
+		}
+
 		if ( is_admin_bar_showing() ) {
 			wp_enqueue_style( 'wsu_design_system_wordpress', 'https://cdn.web.wsu.edu/designsystem/' . $wds_version . '/build/dist/platforms/wsu-design-system.wordpress.bundle.dist.css', array(), $version );
 		}
