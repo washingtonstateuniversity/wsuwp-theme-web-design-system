@@ -75,7 +75,7 @@
 			</a>
 		</div>
 		<div class="wsu-g-header__menu-icon-container">
-			<button class="wsu-g-header__menu-icon-link" onClick="wsu_wds.vertical_nav.toggle_panel()">
+			<button class="wsu-g-header__menu-icon-link" onClick="wsu_wds.vertical_nav.toggle_panel()" area-label="menu expand or collapse">
 				<span class="wsu-icon wsu-i-menu"></span>
 			</button>
 		</div>
