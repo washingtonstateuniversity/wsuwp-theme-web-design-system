@@ -4,7 +4,7 @@
 class Options {
 
 
-	protected static $option_key = 'wsu_theme_options';
+	protected static $option_key = 'wsu_site_option';
 
 
 	public static function get( $property ) {
@@ -27,11 +27,11 @@ class Options {
 
 	public static function get_option( $option, $default = '' ) {
 
-		$wsu_theme_options = get_option( self::$option_key, array() );
+		$wsu_site_options = get_option( self::$option_key, array() );
 
-		if ( is_array( $wsu_theme_options ) && array_key_exists( $option, $wsu_theme_options ) ) {
+		if ( is_array( $wsu_site_options ) && array_key_exists( $option, $wsu_site_options ) ) {
 
-			return $wsu_theme_options[ $option ];
+			return $wsu_site_options[ $option ];
 
 		}
 
