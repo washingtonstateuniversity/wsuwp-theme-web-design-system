@@ -35,7 +35,7 @@
 				<li class="wsu-g-header__nav-item">
 					<a
 						class="wsu-g-header__nav-link"
-						href="https://foundation.wsu.edu/"
+						href="<?php echo esc_url( $atts['give_url'] ); ?>"
 					>
 						Give
 					</a>
