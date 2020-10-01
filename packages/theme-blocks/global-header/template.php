@@ -28,7 +28,7 @@
 			class="wsu-g-header__nav"
 			aria-label="Global Header Call to Action Links"
 		>
-			<button class="wsu-g-header__more-icon-link" onClick="wsu_wds.toggleMoreMenu()">
+			<button class="wsu-g-header__more-icon-link" onClick="wsu_wds.toggleMoreMenu()" area-label="quick links expand or collapse">
 				<span class="wsu-icon wsu-i-more"></span>
 			</button>
 			<ul class="wsu-g-header__nav-list">
@@ -70,6 +70,7 @@
 			<a
 				class="wsu-g-header__search-icon-link"
 				href="https://search.wsu.edu/"
+				title="search WSU"
 			>
 				<span class="wsu-icon wsu-i-search"></span>
 			</a>
