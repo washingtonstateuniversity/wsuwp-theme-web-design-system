@@ -24,7 +24,7 @@
 					<?php echo esc_html( $first_level_item['title'] ); ?>
 				</a>
 				<?php if ( ! empty( $first_level_item['children'] ) ) : ?>
-				<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
+				<ul class="wsu-s-nav-vertical__nav-list" role="menu" >
 					<?php foreach ( $first_level_item['children'] as $second_level_item ) : ?>
 					<li class="wsu-s-nav-vertical__nav-item<?php if ( ! empty( $second_level_item['children'] ) ) : ?>--has-children<?php endif; ?>" role="none">
 						<a 
@@ -35,7 +35,7 @@
 							<?php echo esc_html( $second_level_item['title'] ); ?>
 						</a>
 						<?php if ( ! empty( $second_level_item['children'] ) ) : ?>
-						<ul class="wsu-s-nav-vertical__nav-list" role="menu" aria-label="Replace Me w/ Link Name Submenu">
+						<ul class="wsu-s-nav-vertical__nav-list" role="menu" >
 							<?php foreach ( $second_level_item['children'] as $third_level_item ) : ?>
 							<li class="wsu-s-nav-vertical__nav-item" role="none">
 								<a 
