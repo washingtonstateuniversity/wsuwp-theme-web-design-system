@@ -2,6 +2,7 @@
 
 <!-- COMPONENT:START -->
 <div class="wsu-s-nav-vertical-split__wrapper">
+	<div class="wsu-s-nav-vertical-split__overlay  wsu-s-nav-vertical--close"></div>
 	<div class="wsu-s-nav-vertical-split__menu-bar-wrapper">
 		<button
 			class="wsu-s-nav-vertical-split__menu-bar wsu-s-nav-vertical--open"

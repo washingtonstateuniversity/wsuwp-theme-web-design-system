@@ -44,6 +44,14 @@ class Customizer_Section_Site_Nav_Vertical {
 		);
 
 		$wp_customize->add_setting(
+			'wsu_wds_site_nav_vertical_is_split_button',
+			array(
+				'default'     => false,
+				'transport'   => 'refresh',
+			)
+		);
+
+		$wp_customize->add_setting(
 			'wsu_wds_site_nav_vertical_start_open',
 			array(
 				'default'     => true,
@@ -56,6 +64,16 @@ class Customizer_Section_Site_Nav_Vertical {
 			array(
 				'settings' => 'wsu_wds_site_nav_vertical_is_active',
 				'label'    => 'Show Vertical Navigation',
+				'section'  => self::get( 'section_id' ),
+				'type'     => 'checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'wsu_wds_site_nav_vertical_is_split_button_control',
+			array(
+				'settings' => 'wsu_wds_site_nav_vertical_is_split_button',
+				'label'    => 'Use Split Button',
 				'section'  => self::get( 'section_id' ),
 				'type'     => 'checkbox',
 			)
