@@ -15,6 +15,7 @@ class Blocks {
 		require_once $block_dir . 'global-header/global-header.php';
 		require_once $block_dir . 'global-footer/global-footer.php';
 		require_once $block_dir . 'site-nav-vertical-split/site-nav-vertical-split.php';
+		require_once $block_dir . 'article-header/article-header.php';
 
 	}
 
