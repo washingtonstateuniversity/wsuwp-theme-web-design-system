@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/global-header', get_post_type() ); ?>
 <!-- GLOBAL CONTAINER:START -->
 <?php get_template_part( 'template-parts/wrappers/wsu-g-container-start', get_post_type() ); ?>
+	<?php get_template_part( 'template-parts/global-header', get_post_type() ); ?>
 	<?php get_template_part( 'template-parts/site-nav-vertical', get_post_type() ); ?>
 	<!-- SITE WRAPPER:START -->
 	<?php get_template_part( 'template-parts/wrappers/wsu-s-wrapper-start', get_post_type() ); ?>
