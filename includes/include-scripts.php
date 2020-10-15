@@ -56,11 +56,11 @@ class Scripts {
 		}
 
 		if ( function_exists('is_plugin_active') && is_plugin_active( 'gravityforms/gravityforms.php' ) ) {
-			wp_enqueue_style( 'wsu_design_system_gravityforms', $wsu_design_system_gravityforms, array(), $version );
+			wp_enqueue_style( 'wsu_design_system_gravityforms', $wsu_design_system_gravityforms, array( 'gforms_formsmain_css', 'gforms_reset_css', 'gforms_datepicker_css', 'gforms_ready_class_css', 'gforms_browsers_css' ), $version );
 		}
 
 		if ( function_exists('is_plugin_active') && is_plugin_active( 'tablepress/tablepress.php' ) ) {
-			wp_enqueue_style( 'wsu_design_system_tablepress', $wsu_design_system_tablepress, array(), $version );
+			wp_enqueue_style( 'wsu_design_system_tablepress', $wsu_design_system_tablepress, array( 'tablepress-default' ), $version );
 		}
 
 	}
