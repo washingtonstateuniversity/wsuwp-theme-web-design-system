@@ -6,8 +6,9 @@ class Theme_Config {
 
 	public function init() {
 
-		add_action( 'after_setup_theme', __CLASS__ . '::theme_setup' );
-
+		add_action( 'after_setup_theme', array( __CLASS__, 'theme_setup' ) );
+		add_filter( 'document_title_parts', array( __CLASS__, 'filter_title' ) );
+		add_filter( 'document_title_separator', array( __CLASS__, 'filter_title_separator' ) );
 	}
 
 
@@ -45,6 +46,21 @@ class Theme_Config {
 		add_theme_support( 'editor-gradient-presets', array() );
 
 		remove_theme_support( 'core-block-patterns' );
+
+	}
+
+
+	public static function filter_title( $title ) {
+
+		$title['tagline'] = 'Washington State University';
+
+		return $title;
+
+	}
+
+	public static function filter_title_separator( $separator ) {
+
+		return '|';
 
 	}
 

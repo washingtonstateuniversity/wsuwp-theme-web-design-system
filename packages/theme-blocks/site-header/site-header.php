@@ -13,11 +13,30 @@ class Block_Site_Header extends Block {
 
 	protected static function render( $atts, $content ) {
 
-		if ( ! empty( $atts['is_active'] ) ) {
+		if ( self::check_should_display( $atts ) ) {
 
 			include __DIR__ . '/templates/default.php';
 
 		}
+
+	}
+
+
+	protected static function check_should_display( $atts ) {
+
+		if ( empty( $atts['is_active'] ) ) {
+
+			return false;
+
+		}
+
+		if ( is_front_page() && empty( $atts['on_home'] ) ) {
+
+			return false;
+
+		}
+
+		return true;
 
 	}
 
