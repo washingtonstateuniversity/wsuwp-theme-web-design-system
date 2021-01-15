@@ -28,7 +28,7 @@
 			class="wsu-g-header__nav"
 			aria-label="Global Header Call to Action Links"
 		>
-			<button class="wsu-g-header__more-icon-link" onClick="wsu_wds.toggleMoreMenu()" area-label="quick links expand or collapse">
+			<button class="wsu-g-header__more-icon-link" onClick="wsu_wds.toggleMoreMenu()" aria-label="quick links expand or collapse">
 				<span class="wsu-icon wsu-i-more"></span>
 			</button>
 			<ul class="wsu-g-header__nav-list">
@@ -78,7 +78,7 @@
 		<div class="wsu-g-header__menu-icon-container">
 			<button 
 				class="wsu-g-header__menu-icon-link wsu-s-nav-vertical--toggle"  
-				area-label="menu expand or collapse"
+				aria-label="menu expand or collapse"
 				<?php if ( ! get_theme_mod( 'wsu_wds_site_nav_vertical_is_split_button', false ) ) : ?>onclick="wsu_wds.vertical_nav.toggle_panel()"<?php endif; ?>
 				>
 				<span class="wsu-icon wsu-i-menu"></span>
