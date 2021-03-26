@@ -32,6 +32,17 @@
 				<span class="wsu-icon wsu-i-more"></span>
 			</button>
 			<ul class="wsu-g-header__nav-list">
+				<?php 
+				$global_menu = wp_nav_menu( 
+					array( 
+						'menu' => 'globalheadermenu', 
+						'echo' => 0, 
+						'fallback_cb' => false,
+						'container' => '',
+						'items_wrap' => '%3$s',
+					)
+				);
+				if ( $global_menu ) : ?><?php echo wp_kses_post( $global_menu ); ?><?php else : ?>
 				<li class="wsu-g-header__nav-item">
 					<a
 						class="wsu-g-header__nav-link"
@@ -64,6 +75,7 @@
 						MyWSU
 					</a>
 				</li>
+				<?php endif; ?>
 			</ul>
 		</nav>
 		<div class="wsu-g-header__search-icon-container">
