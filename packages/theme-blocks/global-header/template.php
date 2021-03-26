@@ -40,6 +40,7 @@
 						'fallback_cb' => false,
 						'container' => '',
 						'items_wrap' => '%3$s',
+						'theme_location' => 'none', // Fake
 					)
 				);
 				if ( $global_menu ) : ?><?php echo wp_kses_post( $global_menu ); ?><?php else : ?>
