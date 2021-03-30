@@ -51,6 +51,14 @@ class Customizer_Section_Site_Header {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'wsu_wds_site_header_link',
+			array(
+				'default'     => '',
+				'transport'   => 'refresh',
+			)
+		);
+
 		$wp_customize->add_control(
 			'wsu_wds_site_header_is_active_control',
 			array(
@@ -68,6 +76,16 @@ class Customizer_Section_Site_Header {
 				'label'    => 'Show Site Header On Homepage',
 				'section'  => self::get( 'section_id' ),
 				'type'     => 'checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'wsu_wds_site_header_link_control',
+			array(
+				'settings' => 'wsu_wds_site_header_link',
+				'label'    => 'Site Header Link',
+				'section'  => self::get( 'section_id' ),
+				'type'     => 'text',
 			)
 		);
 
