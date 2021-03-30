@@ -59,6 +59,22 @@ class Customizer_Section_Site_Header {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'wsu_wds_site_header_link_subtitle',
+			array(
+				'default'     => '',
+				'transport'   => 'refresh',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'wsu_wds_site_header_title_is_linked',
+			array(
+				'default'     => false,
+				'transport'   => 'refresh',
+			)
+		);
+
 		$wp_customize->add_control(
 			'wsu_wds_site_header_is_active_control',
 			array(
@@ -86,6 +102,26 @@ class Customizer_Section_Site_Header {
 				'label'    => 'Site Header Link',
 				'section'  => self::get( 'section_id' ),
 				'type'     => 'text',
+			)
+		);
+
+		$wp_customize->add_control(
+			'wsu_wds_site_header_link_subtitle_control',
+			array(
+				'settings' => 'wsu_wds_site_header_link_subtitle',
+				'label'    => 'Site Header Subtitle Link',
+				'section'  => self::get( 'section_id' ),
+				'type'     => 'text',
+			)
+		);
+
+		$wp_customize->add_control(
+			'wsu_wds_site_header_title_is_linked_control',
+			array(
+				'settings' => 'wsu_wds_site_header_title_is_linked',
+				'label'    => 'Link Site Title',
+				'section'  => self::get( 'section_id' ),
+				'type'     => 'checkbox',
 			)
 		);
 
