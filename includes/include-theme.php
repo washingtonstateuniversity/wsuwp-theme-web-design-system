@@ -35,6 +35,7 @@ class Theme {
 		require_once __DIR__ . '/include-sidebars.php';
 		require_once __DIR__ . '/include-blocks.php';
 		require_once __DIR__ . '/include-body-classes.php';
+		require_once __DIR__ . '/include-rest-api.php';
 
 	}
 
