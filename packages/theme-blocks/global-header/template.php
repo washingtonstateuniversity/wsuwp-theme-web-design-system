@@ -1,7 +1,7 @@
 <!-- COMPONENT:START -->
 <div class="wsu-g-header__wrapper wsu-u-no-js">
 	<header class="wsu-g-header">
-		<a class="wsu-g-header__logo-link" href="#">
+		<a class="wsu-g-header__logo-link" href="http://wsu.edu/">
 			<span class="wsu-g-header__logo-icon">
 				<svg
 					role="img"
