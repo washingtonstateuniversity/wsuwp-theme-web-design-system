@@ -1,0 +1,45 @@
+/* ================= News List Item =======================
+========================================================= */
+ul.wsu-c-news__wrapper {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.wsu-c-news-list__item {
+	display: flex;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.wsu-c-news-list__item .wsu-c-image {
+	width: 60px;
+	flex-grow: 0;
+}
+
+.wsu-c-news-list__item .wsu-c-image img {
+	object-fit: cover;
+	width: 60px;
+	height: 60px !important;
+	max-width: none !important;
+	border-radius: 3px;
+}
+
+.wsu-c-news-list__content {
+	flex-grow: 1;
+	padding-right: 1.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.wsu-c-news-list__item h3 {
+	font-size: 1rem !important;
+	margin-bottom: 0.25em !important;
+}
+
+.wsu-c-news-list__item .wsu-c-caption {
+	font-size: 0.8rem !important;
+	line-height: 1.2 !important;
+	display: block;
+}
