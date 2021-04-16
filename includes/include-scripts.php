@@ -67,6 +67,8 @@ class Scripts {
 
 		wp_enqueue_style( 'wsu_design_system_bundle', $wsu_design_system_bundle, array(), $version );
 
+		wp_enqueue_style( 'wsu_design_system_temp', get_stylesheet_directory_uri() . '/temp-style.css', array(), $version );
+
 		wp_enqueue_script( 'wsu_design_system_js', $wsu_design_system_js, array(), $version, true );
 
 		if ( is_admin_bar_showing() ) {
