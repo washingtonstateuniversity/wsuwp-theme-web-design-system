@@ -53,6 +53,8 @@ class Scripts {
 
 	public static function enqueue_scripts() {
 
+		$version = Theme::get( 'version' );
+
 		$wsu_design_system_normalize    = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css';
 		$wsu_design_system_icons        = 'https://cdn.web.wsu.edu/designsystem/1.x/wsu-icons/dist/wsu-icons.bundle.css';
 		$wsu_design_system_bundle       = ( self::get('is_local') ) ? WDS_LOCALHOST_URL . '/bundles/dist/wsu-design-system.bundle.dist.css' : 'https://cdn.web.wsu.edu/designsystem/' . self::get('wds_version') . '/build/dist/wsu-design-system.bundle.dist.css';
