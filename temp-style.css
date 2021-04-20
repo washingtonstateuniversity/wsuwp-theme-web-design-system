@@ -186,3 +186,24 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.39);
 		display: block !important;
 	}
 }
+
+@media screen and (max-width: 1000px ) {
+	.wsuwp-person-container {
+		width: calc( 33.33% - 2rem );
+		
+	}
+}
+
+@media screen and (max-width: 750px ) {
+	.wsuwp-person-container {
+		width: calc( 50% - 2rem );
+		
+	}
+}
+
+@media screen and (max-width: 550px ) {
+	.wsuwp-person-container {
+		width: calc( 100% - 2rem );
+		
+	}
+}
